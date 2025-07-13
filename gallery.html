@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Gallery - BRAINOGYM Educare</title>
+    <link rel="icon" href="logos/brainogym-favicon.ico" type="image/x-icon" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Merriweather:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Header Section (Consistent across all pages) -->
+    <header id="main-header">
+      <div class="container">
+        <a href="index.html" class="logo-link">
+          <img
+            src="logos/brainogym-logo-primary.png"
+            alt="BRAINOGYM Educare Logo"
+          />
+          <svg viewBox="0 0 420 40" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient
+                id="brand-gradient-new"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="0%"
+              >
+                <stop offset="0%" style="stop-color: #daa520" />
+                <stop offset="50%" style="stop-color: #ffd700" />
+                <stop offset="100%" style="stop-color: #f0e68c" />
+              </linearGradient>
+            </defs>
+            <text
+              x="0"
+              y="30"
+              font-family="Arial, sans-serif"
+              font-size="30"
+              font-weight="bold"
+              fill="url(#brand-gradient-new)"
+            >
+              BRAINOGYM Educare
+            </text>
+          </svg>
+        </a>
+
+        <button
+          id="menu-toggle"
+          aria-label="Open Menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu-content"
+        >
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+
+        <div id="mobile-menu-content">
+          <nav id="main-nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="courses.html">Courses</a>
+            <a href="gallery.html" class="active">Gallery</a>
+            <a href="contact.html">Contact Us</a>
+          </nav>
+          <a href="contact.html" class="btn btn-primary">Enquire Now</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Page Hero Section -->
+      <section id="gallery-hero">
+        <div class="container text-center">
+          <h1 class="animate-on-scroll">
+            Moments of
+            <span class="section-title-highlight">Joy & Achievement</span>
+          </h1>
+          <p class="section-intro animate-on-scroll" data-delay="200">
+            Explore our gallery to see the vibrant learning environment and the
+            proud accomplishments of our students.
+          </p>
+        </div>
+      </section>
+
+      <!-- Main Gallery Section -->
+      <section id="gallery-main" class="alternate-bg">
+        <div class="container">
+          <!-- Event Filtering Buttons -->
+          <div
+            class="gallery-filters animate-on-scroll"
+            data-delay="100"
+          >
+            <button
+              class="btn btn-filter active"
+              data-filter="championships-2024"
+            >
+              Annual Championships 2024
+            </button>
+            <button class="btn btn-filter" data-filter="future-event">
+              Future Events
+            </button>
+          </div>
+
+          <!-- Gallery Grid -->
+          <div class="gallery-grid">
+            <!-- Images will be dynamically filtered by JS -->
+            <div
+              class="gallery-item animate-on-scroll"
+              data-category="championships-2024"
+              data-delay="200"
+            >
+              <img
+                src="images/gallery/annual-championships-2024/BO0A2898.JPG"
+                alt="Annual Championships 2024"
+                data-caption="Annual Championships Awards Ceremony 2024"
+                loading="lazy"
+              />
+            </div>
+            <div
+              class="gallery-item animate-on-scroll"
+              data-category="championships-2024"
+              data-delay="250"
+            >
+              <img
+                src="images/gallery/annual-championships-2024/BO0A2899.JPG"
+                alt="Annual Championships 2024"
+                data-caption="Annual Championships Awards Ceremony 2024"
+                loading="lazy"
+              />
+            </div>
+            <!-- ... Repeat for all 27 images ... -->
+            <div
+              class="gallery-item animate-on-scroll"
+              data-category="championships-2024"
+              data-delay="300"
+            >
+              <img
+                src="images/gallery/annual-championships-2024/BO0A2900.JPG"
+                alt="Annual Championships 2024"
+                data-caption="Annual Championships Awards Ceremony 2024"
+                loading="lazy"
+              />
+            </div>
+            <div
+              class="gallery-item animate-on-scroll"
+              data-category="championships-2024"
+              data-delay="350"
+            >
+              <img
+                src="images/gallery/annual-championships-2024/BO0A2901.JPG"
+                alt="Annual Championships 2024"
+                data-caption="Annual Championships Awards Ceremony 2024"
+                loading="lazy"
+              />
+            </div>
+            <div
+              class="gallery-item animate-on-scroll"
+              data-category="championships-2024"
+            >
+              <img
+                src="images/gallery/annual-championships-2024/BO0A2902.JPG"
+                alt="Annual Championships 2024"
+                data-caption="Annual Championships Awards Ceremony 2024"
+                loading="lazy"
+              />
+            </div>
+            <div
+              class="gallery-item animate-on-scroll"
+              data-category="championships-2024"
+            >
+              <img
+                src="images/gallery/annual-championships-2024/BO0A2903.JPG"
+                alt="Annual Championships 2024"
+                data-caption="Annual Championships Awards Ceremony 2024"
+                loading="lazy"
+              />
+            </div>
+            <div
+              class="gallery-item animate-on-scroll"
+              data-category="championships-2024"
+            >
+              <img
+                src="images/gallery/annual-championships-2024/BO0A2904.JPG"
+                alt="Annual Championships 2024"
+                data-caption="Annual Championships Awards Ceremony 2024"
+                loading="lazy"
+              />
+            </div>
+            <div
+              class="gallery-item animate-on-scroll"
+              data-category="championships-2024"
+            >
+              <img
+                src="images/gallery/annual-championships-2024/BO0A3085.JPG"
+                alt="Annual Championships 2024"
+                data-caption="Celebrating Student Success 2024"
+                loading="lazy"
+              />
+            </div>
+            <div
+              class="gallery-item animate-on-scroll"
+              data-category="championships-2024"
+            >
+              <img
+                src="images/gallery/annual-championships-2024/BO0A3086.JPG"
+                alt="Annual Championships 2024"
+                data-caption="Celebrating Student Success 2024"
+                loading="lazy"
+              />
+            </div>
+            <div
+              class="gallery-item animate-on-scroll"
+              data-category="championships-2024"
+            >
+              <img
+                src="images/gallery/annual-championships-2024/BO0A3087.JPG"
+                alt="Annual Championships 2024"
+                data-caption="Celebrating Student Success 2024"
+                loading="lazy"
+              />
+            </div>
+            <div
+              class="gallery-item animate-on-scroll"
+              data-category="championships-2024"
+            >
+              <img
+                src="images/gallery/annual-championships-2024/BO0A3088.JPG"
+                alt="Annual Championships 2024"
+                data-caption="Celebrating Student Success 2024"
+                loading="lazy"
+              />
+            </div>
+            <div
+              class="gallery-item animate-on-scroll"
+              data-category="championships-2024"
+            >
+              <img
+                src="images/gallery/annual-championships-2024/BO0A3089.JPG"
+                alt="Annual Championships 2024"
+                data-caption="Celebrating Student Success 2024"
+                loading="lazy"
+              />
+            </div>
+            <div
+              class="gallery-item animate-on-scroll"
+              data-category="championships-2024"
+            >
+              <img
+                src="images/gallery/annual-championships-2024/BO0A3090.JPG"
+                alt="Annual Championships 2024"
+                data-caption="Celebrating Student Success 2024"
+                loading="lazy"
+              />
+            </div>
+            <div
+              class="gallery-item animate-on-scroll"
+              data-category="championships-2024"
+            >
+              <img
+                src="images/gallery/annual-championships-2024/BO0A3091.JPG"
+                alt="Annual Championships 2024"
+                data-caption="Celebrating Student Success 2024"
+                loading="lazy"
+              />
+            </div>
+            <div
+              class="gallery-item animate-on-scroll"
+              data-category="championships-2024"
+            >
+              <img
+                src="images/gallery/annual-championships-2024/BO0A3092.JPG"
+                alt="Annual Championships 2024"
+                data-caption="Celebrating Student Success 2024"
+                loading="lazy"
+              />
+            </div>
+            <div
+              class="gallery-item animate-on-scroll"
+              data-category="championships-2024"
+            >
+              <img
+                src="images/gallery/annual-championships-2024/BO0A3093.JPG"
+                alt="Annual Championships 2024"
+                data-caption="Celebrating Student Success 2024"
+                loading="lazy"
+              />
+            </div>
+            <div
+              class="gallery-item animate-on-scroll"
+              data-category="championships-2024"
+            >
+              <img
+                src="images/gallery/annual-championships-2024/BO0A3094.JPG"
+                alt="Annual Championships 2024"
+                data-caption="Celebrating Student Success 2024"
+                loading="lazy"
+              />
+            </div>
+            <div
+              class="gallery-item animate-on-scroll"
+              data-category="championships-2024"
+            >
+              <img
+                src="images/gallery/annual-championships-2024/BO0A3095.JPG"
+                alt="Annual Championships 2024"
+                data-caption="Celebrating Student Success 2024"
+                loading="lazy"
+              />
+            </div>
+            <div
+              class="gallery-item animate-on-scroll"
+              data-category="championships-2024"
+            >
+              <img
+                src="images/gallery/annual-championships-2024/BO0A3096.JPG"
+                alt="Annual Championships 2024"
+                data-caption="Celebrating Student Success 2024"
+                loading="lazy"
+              />
+            </div>
+            <div
+              class="gallery-item animate-on-scroll"
+              data-category="championships-2024"
+            >
+              <img
+                src="images/gallery/annual-championships-2024/BO0A3097.JPG"
+                alt="Annual Championships 2024"
+                data-caption="Celebrating Student Success 2024"
+                loading="lazy"
+              />
+            </div>
+            <div
+              class="gallery-item animate-on-scroll"
+              data-category="championships-2024"
+            >
+              <img
+                src="images/gallery/annual-championships-2024/BO0A3098.JPG"
+                alt="Annual Championships 2024"
+                data-caption="Celebrating Student Success 2024"
+                loading="lazy"
+              />
+            </div>
+            <div
+              class="gallery-item animate-on-scroll"
+              data-category="championships-2024"
+            >
+              <img
+                src="images/gallery/annual-championships-2024/BO0A3099.JPG"
+                alt="Annual Championships 2024"
+                data-caption="Celebrating Student Success 2024"
+                loading="lazy"
+              />
+            </div>
+            <div
+              class="gallery-item animate-on-scroll"
+              data-category="championships-2024"
+            >
+              <img
+                src="images/gallery/annual-championships-2024/BO0A3100.JPG"
+                alt="Annual Championships 2024"
+                data-caption="Celebrating Student Success 2024"
+                loading="lazy"
+              />
+            </div>
+            <div
+              class="gallery-item animate-on-scroll"
+              data-category="championships-2024"
+            >
+              <img
+                src="images/gallery/annual-championships-2024/BO0A3101.JPG"
+                alt="Annual Championships 2024"
+                data-caption="Celebrating Student Success 2024"
+                loading="lazy"
+              />
+            </div>
+            <div
+              class="gallery-item animate-on-scroll"
+              data-category="championships-2024"
+            >
+              <img
+                src="images/gallery/annual-championships-2024/BO0A3102.JPG"
+                alt="Annual Championships 2024"
+                data-caption="Celebrating Student Success 2024"
+                loading="lazy"
+              />
+            </div>
+            <div
+              class="gallery-item animate-on-scroll"
+              data-category="championships-2024"
+            >
+              <img
+                src="images/gallery/annual-championships-2024/BO0A3103.JPG"
+                alt="Annual Championships 2024"
+                data-caption="Celebrating Student Success 2024"
+                loading="lazy"
+              />
+            </div>
+            <div
+              class="gallery-item animate-on-scroll"
+              data-category="championships-2024"
+            >
+              <img
+                src="images/gallery/annual-championships-2024/BO0A3104.JPG"
+                alt="Annual Championships 2024"
+                data-caption="Celebrating Student Success 2024"
+                loading="lazy"
+              />
+            </div>
+            <!-- Placeholder for future events -->
+            <div class="gallery-item" data-category="future-event">
+              <img
+                src="images/coming-soon-placeholder.jpg"
+                alt="Coming Soon"
+                data-caption="Images from our next event coming soon!"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Lightbox Structure -->
+      <div id="image-lightbox" class="lightbox">
+        <span class="lightbox-close">×</span>
+        <div class="lightbox-nav lightbox-prev" aria-label="Previous image">
+          ❮
+        </div>
+        <img class="lightbox-content" id="lightbox-img" />
+        <div class="lightbox-nav lightbox-next" aria-label="Next image">
+          ❯
+        </div>
+        <div id="lightbox-caption" class="lightbox-caption"></div>
+      </div>
+    </main>
+
+    <!-- Footer Section (Consistent across all pages) -->
+    <footer id="main-footer" class="animate-on-scroll">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-column about-brainogym">
+            <img
+              src="logos/brainogym-logo-primary.png"
+              alt="Brainogym Logo"
+              class="footer-logo-img"
+            />
+            <p>
+              Nurturing Young Minds Since 2008. Building a path for a bright
+              future.
+            </p>
+          </div>
+          <div class="footer-column quick-links">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="courses.html">Courses</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-column contact-info">
+            <h4>Contact Info</h4>
+            <p>
+              <svg class="footer-icon" viewBox="0 0 24 24">
+                <path
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                />
+              </svg>
+              S - 200, Near Mcd Community Center, Shakarpur, Delhi - 110092.
+            </p>
+            <p>
+              <svg class="footer-icon" viewBox="0 0 24 24">
+                <path
+                  d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
+                />
+              </svg>
+              <a href="tel:09015313290">090153 13290</a>
+            </p>
+            <p>
+              <svg class="footer-icon" viewBox="0 0 24 24">
+                <path
+                  d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                />
+              </svg>
+              <a href="mailto:brainogym@gmail.com">brainogym@gmail.com</a>
+            </p>
+          </div>
+          <div class="footer-column follow-us">
+            <h4>Follow Us</h4>
+            <div class="social-icons">
+              <a href="https://www.facebook.com/share/1PSVRKQ8tw/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <svg class="social-svg-icon" viewBox="0 0 24 24">
+                  <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-1.7c-.85 0-1.03.4-1.03.97V12h2.8l-.4 3H13v6.95c5.05-.5 9-4.76 9-9.95z"/>
+                </svg>
+              </a>
+              <a href="https://www.instagram.com/brainogymeducare?igsh=MXN4ZTYxcXRyc3Fhbg==" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <svg class="social-svg-icon" viewBox="0 0 24 24">
+                  <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/>
+                </svg>
+              </a>
+              <a href="https://youtube.com/@brainogymeducare?feature=shared" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                <svg class="social-svg-icon" viewBox="0 0 24 24">
+                  <path d="M21.58 7.19c-.23-.86-.9-1.52-1.76-1.76C18.25 5 12 5 12 5s-6.25 0-7.82.43c-.86.23-1.52.9-1.76 1.76C2 8.75 2 12 2 12s0 3.25.43 4.81c.23.86.9 1.52 1.76 1.76C5.75 19 12 19 12 19s6.25 0 7.82-.43c.86-.23-1.52.9-1.76 1.76C22 15.25 22 12 22 12s0-3.25-.42-4.81zM9.75 15.5V8.5L15.75 12 9.75 15.5z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">
+          <p>
+            © <span id="current-year"></span> BRAINOGYM Educare. All Rights
+            Reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // --- SITE-WIDE SCRIPT ---
+        const menuToggle = document.getElementById("menu-toggle");
+        const mobileMenuContent = document.getElementById("mobile-menu-content");
+        if (menuToggle && mobileMenuContent) {
+          const mainNavOriginal = document.getElementById("main-nav");
+          const enquireBtnOriginal = document.querySelector("#main-header .container .btn.btn-primary");
+          const mainNavClone = mainNavOriginal.cloneNode(true);
+          const enquireBtnClone = enquireBtnOriginal.cloneNode(true);
+          mobileMenuContent.innerHTML = "";
+          mobileMenuContent.appendChild(mainNavClone);
+          mobileMenuContent.appendChild(enquireBtnClone);
+          menuToggle.addEventListener("click", function () {
+            const isExpanded = menuToggle.classList.contains("open");
+            mobileMenuContent.classList.toggle("open");
+            menuToggle.classList.toggle("open");
+            menuToggle.setAttribute("aria-expanded", !isExpanded);
+            menuToggle.setAttribute("aria-label", isExpanded ? "Open Menu" : "Close Menu");
+          });
+        }
+        const yearSpan = document.getElementById("current-year");
+        if (yearSpan) { yearSpan.textContent = new Date().getFullYear(); }
+        const animatedElements = document.querySelectorAll(".animate-on-scroll");
+        const scrollObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const delay = parseInt(entry.target.dataset.delay) || 0;
+              setTimeout(() => { entry.target.classList.add("is-visible"); }, delay);
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+        animatedElements.forEach((el) => scrollObserver.observe(el));
+        const navLinks = document.querySelectorAll("#main-nav a, #mobile-menu-content #main-nav a");
+        const currentPath = window.location.pathname.split("/").pop() || "index.html";
+        navLinks.forEach((link) => {
+          const linkPath = link.getAttribute("href").split("/").pop();
+          link.classList.remove("active");
+          if (linkPath === currentPath) { link.classList.add("active"); }
+        });
+
+        // --- GALLERY PAGE SPECIFIC SCRIPT ---
+        const filterButtons = document.querySelectorAll(".btn-filter");
+        const galleryItems = document.querySelectorAll(".gallery-item");
+        const lightbox = document.getElementById("image-lightbox");
+
+        if (filterButtons.length > 0 && galleryItems.length > 0 && lightbox) {
+          const lightboxImg = document.getElementById("lightbox-img");
+          const lightboxCaption = document.getElementById("lightbox-caption");
+          const closeBtn = lightbox.querySelector(".lightbox-close");
+          const prevBtn = lightbox.querySelector(".lightbox-prev");
+          const nextBtn = lightbox.querySelector(".lightbox-next");
+          let visibleImages = [];
+          let currentLightboxIndex = 0;
+
+          // Filter logic
+          function filterGallery(filter) {
+            galleryItems.forEach(item => {
+              const itemCategory = item.dataset.category;
+              const matches = filter === 'all' || itemCategory === filter;
+              item.style.display = matches ? 'block' : 'none';
+            });
+            updateVisibleImages();
+          }
+
+          filterButtons.forEach(button => {
+            button.addEventListener("click", () => {
+              filterButtons.forEach(btn => btn.classList.remove("active"));
+              button.classList.add("active");
+              filterGallery(button.dataset.filter);
+            });
+          });
+
+          // Lightbox logic
+          function updateVisibleImages() {
+            visibleImages = Array.from(galleryItems)
+              .filter(item => item.style.display !== 'none')
+              .map(item => item.querySelector('img'));
+          }
+
+          function showLightboxImage(index) {
+            if (index < 0) index = visibleImages.length - 1;
+            if (index >= visibleImages.length) index = 0;
+            currentLightboxIndex = index;
+            const img = visibleImages[index];
+            lightboxImg.src = img.src;
+            lightboxCaption.textContent = img.dataset.caption || '';
+          }
+
+          function openLightbox(clickedImg) {
+            const index = visibleImages.indexOf(clickedImg);
+            if (index > -1) {
+              lightbox.style.display = 'flex';
+              document.body.style.overflow = 'hidden';
+              showLightboxImage(index);
+            }
+          }
+          
+          function closeLightbox() {
+            lightbox.style.display = 'none';
+            document.body.style.overflow = '';
+          }
+
+          galleryItems.forEach(item => {
+            item.querySelector('img').addEventListener('click', function() {
+              openLightbox(this);
+            });
+          });
+
+          closeBtn.addEventListener('click', closeLightbox);
+          prevBtn.addEventListener('click', () => showLightboxImage(currentLightboxIndex - 1));
+          nextBtn.addEventListener('click', () => showLightboxImage(currentLightboxIndex + 1));
+          lightbox.addEventListener('click', (e) => { if(e.target === lightbox) closeLightbox(); });
+          document.addEventListener('keydown', (e) => {
+            if (lightbox.style.display === 'flex') {
+              if (e.key === 'Escape') closeLightbox();
+              if (e.key === 'ArrowLeft') prevBtn.click();
+              if (e.key === 'ArrowRight') nextBtn.click();
+            }
+          });
+
+          // Initial setup
+          const initialFilter = document.querySelector(".btn-filter.active")?.dataset.filter || 'all';
+          filterGallery(initialFilter);
+        }
+      });
+    </script>
+  </body>
+</html>

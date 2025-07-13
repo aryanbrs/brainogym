@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brainogym - Building a path for your bright future</title>
+    <link rel="icon" href="logos/brainogym-favicon.ico" type="image/x-icon" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Merriweather:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Link to your external stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+   <!-- Header Section (Consistent across all pages) -->
+<header id="main-header">
+  <div class="container">
+    <a href="index.html" class="logo-link">
+      <img
+        src="logos/brainogym-logo-primary.png"
+        alt="BRAINOGYM Educare Logo"
+      />
+      <svg viewBox="0 0 420 40" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient
+            id="brand-gradient-new"
+            x1="0%"
+            y1="0%"
+            x2="100%"
+            y2="0%"
+          >
+            <stop offset="0%" style="stop-color: #daa520" />
+            <stop offset="50%" style="stop-color: #ffd700" />
+            <stop offset="100%" style="stop-color: #f0e68c" />
+          </linearGradient>
+        </defs>
+        <text
+          x="0"
+          y="30"
+          font-family="Arial, sans-serif"
+          font-size="30"
+          font-weight="bold"
+          fill="url(#brand-gradient-new)"
+        >
+          BRAINOGYM Educare
+        </text>
+      </svg>
+    </a>
+
+    <!-- This is the Hamburger Button for Mobile -->
+    <button
+      id="menu-toggle"
+      aria-label="Open Menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu-content"
+    >
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+
+    <!-- This container holds the Nav and Enquire Button -->
+    <div id="mobile-menu-content">
+      <nav id="main-nav">
+        <!-- The active class will be updated by the script on each page -->
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="courses.html">Courses</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+      <a href="contact.html" class="btn btn-primary">Enquire Now</a>
+    </div>
+  </div>
+</header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+      <!-- Mobile Hero -->
+      <div class="hero-mobile">
+        <div class="container">
+          <h1 class="animate-on-scroll">
+            Building a path for your
+            <span class="highlight">bright future.</span>
+          </h1>
+          <p class="animate-on-scroll" data-delay="100">
+            Nurturing Young Minds Through Innovative Programs in Delhi.
+          </p>
+          <div
+            class="slideshow-container-mobile animate-on-scroll"
+            data-delay="200"
+          >
+            <!-- Mobile slides populated by JS -->
+          </div>
+          <div class="hero-mobile-buttons animate-on-scroll" data-delay="300">
+            <a href="courses.html" class="btn btn-primary">Explore Programs</a>
+            <a href="#youtube-video" class="btn btn-secondary">Watch Story</a>
+          </div>
+          <a
+            href="gallery.html"
+            class="hero-gallery-link animate-on-scroll"
+            data-delay="400"
+            >Visit our gallery to see more →</a
+          >
+        </div>
+      </div>
+
+      <!-- Desktop Hero -->
+      <div class="hero-desktop">
+        <div class="slideshow-container-desktop">
+          <!-- Desktop slides populated by JS -->
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content container">
+          <h1 class="animate-on-scroll">
+            Building a path for your <br class="highlight-br" />
+            <span class="highlight">bright future.</span>
+          </h1>
+          <p class="animate-on-scroll" data-delay="200">
+            Nurturing Young Minds Through Innovative Abacus, Vedic Maths,
+            Robotics & Holistic Development Programs in Delhi.
+          </p>
+          <div class="hero-desktop-buttons animate-on-scroll" data-delay="400">
+            <a href="courses.html" class="btn btn-primary"
+              >Explore Our Programs</a
+            >
+            <a href="#youtube-video" class="btn btn-light-outline"
+              >Watch Our Story</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Welcome Section -->
+    <section id="welcome" class="animate-on-scroll">
+      <div class="container">
+        <h2>
+          Welcome to
+          <span class="section-title-highlight">BRAINOGYM Educare</span>
+        </h2>
+        <p class="section-intro">
+          Pioneering child development since 2008. We empower students with
+          essential skills for a brighter future through a blend of traditional
+          wisdom and modern techniques.
+        </p>
+        <div class="key-stats">
+          <div class="stat-item animate-on-scroll" data-delay="100">
+            <span class="stat-number" data-count="15">0</span>+
+            <p class="stat-label">Years of Excellence</p>
+          </div>
+          <div class="stat-item animate-on-scroll" data-delay="200">
+            <span class="stat-number" data-count="50">0</span>+
+            <p class="stat-label">School Partnerships</p>
+          </div>
+          <div class="stat-item animate-on-scroll" data-delay="300">
+            <span class="stat-number" data-count="25">0</span>+
+            <p class="stat-label">Dedicated Centres</p>
+          </div>
+          <div class="stat-item animate-on-scroll" data-delay="400">
+            <span class="stat-number" data-count="10000">0</span>+
+            <p class="stat-label">Lives Touched</p>
+          </div>
+        </div>
+        <div class="text-center animate-on-scroll" data-delay="500">
+          <a href="about.html" class="btn btn-secondary">Learn More About Us</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Founder Spotlight Section -->
+    <section id="founder-spotlight" class="alternate-bg animate-on-scroll">
+      <div class="container">
+        <h2>
+          A Mother's Vision,
+          <span class="section-title-highlight">A Legacy of Learning</span>
+        </h2>
+        <div class="founder-content">
+          <div
+            class="founder-image-container animate-on-scroll"
+            data-delay="100"
+          >
+            <img
+              src="images/founder-kavita-prasoon.jpg"
+              alt="Mrs. Kavita Prasoon, Founder of Brainogym"
+              class="founder-photo"
+            />
+          </div>
+          <div class="founder-story animate-on-scroll" data-delay="200">
+            <p class="founder-story-quote">
+              "Meet Mrs. Kavita Prasoon, the heart and soul behind Brainogym.
+              What began in 2008 as a mother's quest to support her child's
+              development blossomed into a movement. From a single classroom in
+              Laxmi Nagar, her passion and dedication have transformed Brainogym
+              into a beacon of learning, touching thousands of lives across
+              India."
+            </p>
+            <a href="about.html#founder-full-story" class="read-more-link"
+              >Read Her Full Story »</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Programs Section -->
+    <section id="core-programs" class="animate-on-scroll">
+      <div class="container">
+        <h2>
+          Discover Our
+          <span class="section-title-highlight">Transformative Programs</span>
+        </h2>
+        <div class="programs-grid">
+          <div class="program-card animate-on-scroll" data-delay="100">
+            <svg
+              class="program-icon"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M19 5H5C3.9 5 3 5.9 3 7V17C3 18.1 3.9 19 5 19H19C20.1 19 21 18.1 21 17V7C21 5.9 20.1 5 19 5ZM9 17H7V15H9V17ZM9 13H7V11H9V13ZM9 9H7V7H9V9ZM13 17H11V15H13V17ZM13 13H11V11H13V13ZM13 9H11V7H13V9ZM17 17H15V15H17V17ZM17 13H15V11H17V13ZM17 9H15V7H17V9Z"
+              />
+            </svg>
+            <h3>Abacus Guru</h3>
+            <p>
+              Sharpen mental math, concentration, and memory with our acclaimed
+              Abacus program.
+            </p>
+            <a href="courses.html#abacus" class="btn btn-primary">Learn More</a>
+          </div>
+          <div class="program-card animate-on-scroll" data-delay="200">
+            <svg
+              class="program-icon"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M18 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V4C20 2.9 19.1 2 18 2ZM9.5 18H8V16.5H9.5V18ZM9.5 15H8V13.5H9.5V15ZM9.5 12H8V10.5H9.5V12ZM12.5 18H11V16.5H12.5V18ZM12.5 15H11V13.5H12.5V15ZM12.5 12H11V10.5H12.5V12ZM16 18H14.5V16.5H16V18ZM16 15H14.5V13.5H16V15ZM16 12H14.5V10.5H16V12ZM16 9H8V4H16V9Z"
+              />
+            </svg>
+            <h3>Vedic Maths Guru</h3>
+            <p>
+              Unlock high-speed calculation techniques and make math fun with
+              ancient Vedic principles.
+            </p>
+            <a href="courses.html#vedic-maths" class="btn btn-primary"
+              >Learn More</a
+            >
+          </div>
+          <div class="program-card animate-on-scroll" data-delay="300">
+            <svg
+              class="program-icon"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M19.93 11.07C19.74 10.13 19.08 9.26 18.39 8.39C17.76 7.57 17.06 6.76 16.32 5.97L15.53 5.18C14.74 4.39 13.87 3.73 12.93 3.54C11.61 3.26 10.39 3.26 9.07 3.54C8.13 3.73 7.26 4.39 6.47 5.18L5.68 5.97C4.94 6.76 4.24 7.57 3.61 8.39C2.92 9.26 2.26 10.13 2.07 11.07C1.79 12.39 1.79 13.61 2.07 14.93C2.26 15.87 2.92 16.74 3.61 17.61C4.24 18.43 4.94 19.24 5.68 20.03L6.47 20.82C7.26 21.61 8.13 22.27 9.07 22.46C10.39 22.74 11.61 22.74 12.93 22.46C13.87 22.27 14.74 21.61 15.53 20.82L16.32 20.03C17.06 19.24 17.76 18.43 18.39 17.61C19.08 16.74 19.74 15.87 19.93 14.93C20.21 13.61 20.21 12.39 19.93 11.07ZM12 18C10.9 18 10 17.1 10 16C10 14.9 10.9 14 12 14C13.1 14 14 14.9 14 16C14 17.1 13.1 18 12 18ZM10 11V8H14V11H10Z M7.5 13.5C6.67 13.5 6 12.83 6 12C6 11.17 6.67 10.5 7.5 10.5S9 11.17 9 12C9 12.83 8.33 13.5 7.5 13.5ZM16.5 13.5C15.67 13.5 15 12.83 15 12C15 11.17 15.67 10.5 16.5 10.5S18 11.17 18 12C18 12.83 17.33 13.5 16.5 13.5Z"
+              />
+            </svg>
+            <h3>Robotics for Kids</h3>
+            <p>
+              Ignite creativity and problem-solving skills with hands-on
+              robotics and STEM learning.
+            </p>
+            <a href="courses.html#robotics" class="btn btn-primary"
+              >Learn More</a
+            >
+          </div>
+          <div class="program-card animate-on-scroll" data-delay="400">
+            <svg
+              class="program-icon"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12ZM12 14C9.33 14 4 15.33 4 18V20H20V18C20 15.33 14.67 14 12 14Z M19 8C19 8.24 18.98 8.48 18.94 8.71C19.59 9.17 20 9.94 20 10.79V12H22V10.79C22 9.39 20.84 8.28 19.46 8.04C19.71 7.42 19.83 6.75 19.83 6.06C19.83 5.09 19.56 4.18 19.07 3.4L17.66 4.81C18.49 5.08 19 5.78 19 6.59V8ZM5 8C5 7.23 5.25 6.53 5.68 5.96L4.27 4.55C3.59 5.37 3.17 6.4 3.17 7.5C3.17 9.13 4.05 10.5 5.38 11.23L5.38 11.23C5.16 10.61 5 9.95 5 9.31V8Z"
+              />
+            </svg>
+            <h3>Personality Development</h3>
+            <p>
+              Build confidence, communication skills, and leadership qualities
+              for holistic growth.
+            </p>
+            <a href="courses.html#personality" class="btn btn-primary"
+              >Learn More</a
+            >
+          </div>
+          <div class="program-card animate-on-scroll" data-delay="500">
+            <svg
+              class="program-icon"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M14.4 6L14 4H5V21H7V14H12.6L13 16H20V6H14.4ZM18 14H14L13.2 11H7V6H12.6L13 8H18V14Z M3 4L6.65 10.08L3 16.17V4Z"
+              />
+            </svg>
+            <h3>English Speaking</h3>
+            <p>
+              Master fluent English communication for academic and personal
+              success.
+            </p>
+            <a href="courses.html#english" class="btn btn-primary"
+              >Learn More</a
+            >
+          </div>
+          <div class="program-card animate-on-scroll" data-delay="600">
+            <svg
+              class="program-icon"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM11 16H9V14H11V16ZM11 12H9V7H11V12ZM15 16H13V14H15V16ZM15 12H13V7H15V12Z M18 12.5C18 11.12 16.88 10 15.5 10C14.12 10 13 11.12 13 12.5C13 13.88 14.12 15 15.5 15C16.88 15 18 13.88 18 12.5ZM6 12.5C6 11.12 7.12 10 8.5 10C9.88 10 11 11.12 11 12.5C11 13.88 9.88 15 8.5 15C7.12 15 6 13.88 6 12.5Z"
+              />
+            </svg>
+            <h3>Engaging Summer Camps</h3>
+            <p>
+              Fun-filled and educational summer programs packed with learning
+              and activities.
+            </p>
+            <a href="courses.html#summer-camps" class="btn btn-primary"
+              >Learn More</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- YouTube Video Section -->
+    <section id="youtube-video" class="alternate-bg animate-on-scroll">
+      <div class="container">
+        <h2>
+          See <span class="section-title-highlight">Brainogym in Action!</span>
+        </h2>
+        <div class="video-wrapper animate-on-scroll" data-delay="100">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/I3Lp4yAAS9M"
+            title="YouTube video player - BRAINOGYM Educare Foundation Profile"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          >
+          </iframe>
+        </div>
+        <p class="youtube-channel-link animate-on-scroll" data-delay="200">
+          Visit our
+          <a
+            href="https://youtube.com/@brainogymeducare?feature=shared"
+            target="_blank"
+            rel="noopener noreferrer"
+            >YouTube Channel</a
+          >
+          for more videos.
+        </p>
+      </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-choose-us" class="animate-on-scroll">
+      <div class="container">
+        <h2>
+          Why Parents & Students
+          <span class="section-title-highlight">Choose BRAINOGYM</span>
+        </h2>
+        <ul class="reasons-list">
+          <li class="animate-on-scroll" data-delay="100">
+            <svg
+              class="reason-icon"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12ZM12 14C9.33 14 4 15.33 4 18V19H20V18C20 15.33 14.67 14 12 14Z"
+              />
+            </svg>
+            Experienced & Passionate Educators
+          </li>
+          <li class="animate-on-scroll" data-delay="200">
+            <svg
+              class="reason-icon"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M14 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V8L14 2ZM16 18H8V16H16V18ZM16 14H8V12H16V14ZM13 9V3.5L18.5 9H13Z"
+              />
+            </svg>
+            Proven Curriculum, Real Results
+          </li>
+          <li class="animate-on-scroll" data-delay="300">
+            <svg
+              class="reason-icon"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM11 19.93C7.05 19.44 4 16.08 4 12C4 11.38 4.08 10.78 4.21 10.21L9 15V19C9 19.55 9.45 20 10 20H11V19.93ZM17.79 10.21C17.92 10.78 18 11.38 18 12C18 16.08 14.95 19.44 11 19.93V14L17.79 10.21Z M12 4C14.76 4 17.1 5.43 18.29 7.5L12 11L5.71 7.5C6.9 5.43 9.24 4 12 4Z"
+              />
+            </svg>
+            Holistic Approach to Child Development
+          </li>
+          <li class="animate-on-scroll" data-delay="400">
+            <svg
+              class="reason-icon"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 2L1 9L5 11.18V17.18L12 21L19 17.18V11.18L23 9L12 2ZM11 16H7V13H11V16ZM17 16H13V13H17V16Z M12 4.53L18.74 8.05L12 11.58L5.26 8.05L12 4.53Z"
+              />
+            </svg>
+            Nurturing & Supportive Learning Environment
+          </li>
+          <li class="animate-on-scroll" data-delay="500">
+            <svg
+              class="reason-icon"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z"
+              />
+            </svg>
+            Focus on Building Confidence & Critical Thinking
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section id="final-cta" class="animate-on-scroll">
+      <div class="container">
+        <h2 class="animate-on-scroll">
+          Ready to Empower
+          <span class="section-title-highlight">Your Child's Future?</span>
+        </h2>
+        <p class="animate-on-scroll" data-delay="100">
+          Join the Brainogym family and witness the transformation. Get in touch
+          for a free consultation or to enroll in our programs.
+        </p>
+        <div class="cta-buttons animate-on-scroll" data-delay="200">
+          <a href="contact.html" class="btn btn-primary">Enquire Now</a>
+          <a href="gallery.html" class="btn btn-secondary">View Our Gallery</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="main-footer" class="animate-on-scroll">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-column about-brainogym">
+            <img
+              src="logos/brainogym-logo-primary.png"
+              alt="Brainogym Logo"
+              class="footer-logo-img"
+            />
+            <p>
+              Nurturing Young Minds Since 2008. Building a path for a bright
+              future.
+            </p>
+          </div>
+          <div class="footer-column quick-links">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="courses.html">Courses</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-column contact-info">
+            <h4>Contact Info</h4>
+            <p>
+              <svg
+                class="footer-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                />
+              </svg>
+              S - 200, Near Mcd Community Center, Shakarpur, Delhi - 110092.
+            </p>
+            <p>
+              <svg
+                class="footer-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
+                />
+              </svg>
+              <a href="tel:09015313290">090153 13290</a>
+            </p>
+            <p>
+              <svg
+                class="footer-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                />
+              </svg>
+              <a href="mailto:brainogym@gmail.com">brainogym@gmail.com</a>
+            </p>
+          </div>
+          <div class="footer-column follow-us">
+            <h4>Follow Us</h4>
+            <div class="social-icons">
+              <a
+                href="https://www.facebook.com/share/1PSVRKQ8tw/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+              >
+                <svg
+                  class="social-svg-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-1.7c-.85 0-1.03.4-1.03.97V12h2.8l-.4 3H13v6.95c5.05-.5 9-4.76 9-9.95z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://www.instagram.com/brainogymeducare?igsh=MXN4ZTYxcXRyc3Fhbg=="
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+              >
+                <svg
+                  class="social-svg-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://youtube.com/@brainogymeducare?feature=shared"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YouTube"
+              >
+                <svg
+                  class="social-svg-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M21.58 7.19c-.23-.86-.9-1.52-1.76-1.76C18.25 5 12 5 12 5s-6.25 0-7.82.43c-.86.23-1.52.9-1.76 1.76C2 8.75 2 12 2 12s0 3.25.43 4.81c.23.86.9 1.52 1.76 1.76C5.75 19 12 19 12 19s6.25 0 7.82-.43c.86-.23-1.52.9-1.76 1.76C22 15.25 22 12 22 12s0-3.25-.42-4.81zM9.75 15.5V8.5L15.75 12 9.75 15.5z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">
+          <p>
+            © <span id="current-year"></span> BRAINOGYM Educare. All Rights
+            Reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // --- START: Mobile Menu Toggle ---
+        const menuToggle = document.getElementById("menu-toggle");
+        const mobileMenuContent = document.getElementById(
+          "mobile-menu-content"
+        );
+        const mainNavOriginal = document.getElementById("main-nav");
+        const enquireBtnOriginal = document.querySelector(
+          "#main-header .container .btn.btn-primary"
+        ); // Desktop enquire button
+
+        if (
+          menuToggle &&
+          mobileMenuContent &&
+          mainNavOriginal &&
+          enquireBtnOriginal
+        ) {
+          // Clone nav and button for mobile menu to keep originals intact for desktop
+          const mainNavClone = mainNavOriginal.cloneNode(true);
+          const enquireBtnClone = enquireBtnOriginal.cloneNode(true);
+
+          // Clear mobile menu content and append clones
+          mobileMenuContent.innerHTML = ""; // Clear existing (like the enquire now button that might be there from HTML)
+          mobileMenuContent.appendChild(mainNavClone);
+          mobileMenuContent.appendChild(enquireBtnClone);
+
+          menuToggle.addEventListener("click", function () {
+            const isExpanded = menuToggle.classList.contains("open");
+            mobileMenuContent.classList.toggle("open");
+            menuToggle.classList.toggle("open");
+            menuToggle.setAttribute("aria-expanded", !isExpanded);
+            if (!isExpanded) {
+              menuToggle.setAttribute("aria-label", "Close Menu");
+            } else {
+              menuToggle.setAttribute("aria-label", "Open Menu");
+            }
+          });
+        }
+        // --- END: Mobile Menu Toggle ---
+
+        // --- START: Slideshow Logic ---
+        const images = [
+          "BO0A2898.JPG",
+          "BO0A2899.JPG",
+          "BO0A2900.JPG",
+          "BO0A2901.JPG",
+          "BO0A2902.JPG",
+          "BO0A2903.JPG",
+          "BO0A2904.JPG",
+          "BO0A3085.JPG",
+          "BO0A3086.JPG",
+          "BO0A3087.JPG",
+          "BO0A3088.JPG",
+          "BO0A3089.JPG",
+          "BO0A3090.JPG",
+          "BO0A3091.JPG",
+          "BO0A3092.JPG",
+          "BO0A3093.JPG",
+          "BO0A3094.JPG",
+          "BO0A3095.JPG",
+          "BO0A3096.JPG",
+          "BO0A3097.JPG",
+          "BO0A3098.JPG",
+          "BO0A3099.JPG",
+          "BO0A3100.JPG",
+          "BO0A3101.JPG",
+          "BO0A3102.JPG",
+          "BO0A3103.JPG",
+          "BO0A3104.JPG",
+        ];
+
+        const mobileContainer = document.querySelector(
+          ".slideshow-container-mobile"
+        );
+        const desktopContainer = document.querySelector(
+          ".slideshow-container-desktop"
+        );
+        let currentSlideIndex = 0;
+
+        function populateSlideshow(container, imageClasses) {
+          if (!container) return;
+          container.innerHTML = ""; // Clear existing slides if any
+          images.forEach((imgFile, index) => {
+            const slideDiv = document.createElement("div");
+            slideDiv.className = "slide";
+            if (index === 0) slideDiv.classList.add("active");
+
+            const imageEl = document.createElement("img");
+            imageEl.className = imageClasses; // This was "w-full h-full" + specific, now just specific
+            imageEl.src = `images/${imgFile}`;
+            imageEl.alt = "Brainogym class activity or event";
+            imageEl.loading = index === 0 ? "eager" : "lazy";
+
+            slideDiv.appendChild(imageEl);
+            container.appendChild(slideDiv);
+          });
+        }
+
+        populateSlideshow(mobileContainer, "hero-slide-img-mobile"); // Add specific classes if needed
+        populateSlideshow(desktopContainer, "hero-slide-img-desktop");
+
+        const mobileSlides = mobileContainer
+          ? Array.from(mobileContainer.children)
+          : [];
+        const desktopSlides = desktopContainer
+          ? Array.from(desktopContainer.children)
+          : [];
+
+        function showNextSlide() {
+          if (images.length < 2) return;
+
+          const activeMobileSlide = mobileContainer
+            ? mobileContainer.querySelector(".slide.active")
+            : null;
+          const activeDesktopSlide = desktopContainer
+            ? desktopContainer.querySelector(".slide.active")
+            : null;
+
+          if (activeMobileSlide) activeMobileSlide.classList.remove("active");
+          if (activeDesktopSlide) activeDesktopSlide.classList.remove("active");
+
+          currentSlideIndex = (currentSlideIndex + 1) % images.length;
+
+          if (
+            mobileSlides.length > currentSlideIndex &&
+            mobileSlides[currentSlideIndex]
+          )
+            mobileSlides[currentSlideIndex].classList.add("active");
+          if (
+            desktopSlides.length > currentSlideIndex &&
+            desktopSlides[currentSlideIndex]
+          )
+            desktopSlides[currentSlideIndex].classList.add("active");
+        }
+
+        if (images.length > 0) {
+          setInterval(showNextSlide, 4500); // Slightly slower for smoother feel
+        }
+        // --- END: Slideshow Logic ---
+
+        // --- START: Hero Padding Adjustment ---
+        const header = document.getElementById("main-header");
+        const heroSection = document.getElementById("hero");
+        function adjustHeroPadding() {
+          if (header && heroSection) {
+            const headerHeight = header.offsetHeight;
+            // heroSection.style.paddingTop = `${headerHeight}px`;
+            // This is now handled by fixed hero heights or mobile specific padding
+            // For desktop: height: calc(100vh - headerHeight)
+            // For mobile: padding-top: headerHeight
+            // The CSS already attempts this with fixed values, but JS can make it dynamic
+            if (window.innerWidth < 768) {
+              // Assuming 768px is mobile breakpoint
+              heroSection.style.paddingTop = `${headerHeight}px`;
+            } else {
+              const heroDesktop = heroSection.querySelector(".hero-desktop");
+              if (heroDesktop)
+                heroDesktop.style.minHeight = `calc(100vh - ${headerHeight}px)`;
+            }
+          }
+        }
+        adjustHeroPadding();
+        window.addEventListener("resize", adjustHeroPadding);
+        // --- END: Hero Padding Adjustment ---
+
+        // --- START: Key Stats Counter ---
+        function animateValue(obj, start, end, duration) {
+          let startTimestamp = null;
+          const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min(
+              (timestamp - startTimestamp) / duration,
+              1
+            );
+            obj.innerHTML = Math.floor(progress * (end - start) + start);
+            if (progress < 1) {
+              window.requestAnimationFrame(step);
+            } else {
+              obj.innerHTML = end; // Ensure final value is exact
+            }
+          };
+          window.requestAnimationFrame(step);
+        }
+
+        const statObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const stat = entry.target;
+                const countTo = parseInt(stat.getAttribute("data-count"));
+                animateValue(stat, 0, countTo, 2000); // Animate over 2 seconds
+                statObserver.unobserve(stat); // Animate only once
+              }
+            });
+          },
+          { threshold: 0.5 }
+        ); // Trigger when 50% visible
+
+        const statNumbers = document.querySelectorAll(".stat-number");
+        statNumbers.forEach((stat) => statObserver.observe(stat));
+        // --- END: Key Stats Counter ---
+
+        // --- START: Set Current Year in Footer ---
+        const yearSpan = document.getElementById("current-year");
+        if (yearSpan) {
+          yearSpan.textContent = new Date().getFullYear();
+        }
+        // --- END: Set Current Year in Footer ---
+
+        // --- START: Scroll Animations ---
+        const animatedElements =
+          document.querySelectorAll(".animate-on-scroll");
+        const scrollObserver = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const delay = parseInt(entry.target.dataset.delay) || 0;
+                setTimeout(() => {
+                  entry.target.classList.add("is-visible");
+                }, delay);
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
+        ); // trigger a bit before it's fully in view
+
+        animatedElements.forEach((el) => scrollObserver.observe(el));
+        // --- END: Scroll Animations ---
+
+        // --- Active Nav Link Highlight ---
+        const navLinks = document.querySelectorAll(
+          "#main-nav a, #mobile-menu-content #main-nav a"
+        );
+        const currentPath =
+          window.location.pathname.split("/").pop() || "index.html";
+
+        navLinks.forEach((link) => {
+          const linkPath = link.getAttribute("href").split("/").pop();
+          if (linkPath === currentPath) {
+            link.classList.add("active");
+          } else {
+            link.classList.remove("active");
+          }
+        });
+        // --- END: Active Nav Link Highlight ---
+      });
+    </script>
+    <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // --- 1. SITE-WIDE: MOBILE MENU TOGGLE ---
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileMenuContent = document.getElementById("mobile-menu-content");
+    if (menuToggle && mobileMenuContent) {
+      const mainNavOriginal = document.getElementById("main-nav");
+      const enquireBtnOriginal = document.querySelector("#main-header .container .btn.btn-primary");
+      if (mainNavOriginal && enquireBtnOriginal) {
+        const mainNavClone = mainNavOriginal.cloneNode(true);
+        const enquireBtnClone = enquireBtnOriginal.cloneNode(true);
+        mobileMenuContent.innerHTML = "";
+        mobileMenuContent.appendChild(mainNavClone);
+        mobileMenuContent.appendChild(enquireBtnClone);
+        menuToggle.addEventListener("click", function () {
+          const isExpanded = menuToggle.classList.contains("open");
+          mobileMenuContent.classList.toggle("open");
+          menuToggle.classList.toggle("open");
+          menuToggle.setAttribute("aria-expanded", !isExpanded);
+          menuToggle.setAttribute("aria-label", isExpanded ? "Open Menu" : "Close Menu");
+        });
+      }
+    }
+
+    // --- 2. SITE-WIDE: FOOTER YEAR ---
+    const yearSpan = document.getElementById("current-year");
+    if (yearSpan) {
+      yearSpan.textContent = new Date().getFullYear();
+    }
+
+    // --- 3. SITE-WIDE: SCROLL ANIMATIONS ---
+    const animatedElements = document.querySelectorAll(".animate-on-scroll");
+    if (animatedElements.length > 0) {
+      const scrollObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const delay = parseInt(entry.target.dataset.delay) || 0;
+            setTimeout(() => { entry.target.classList.add("is-visible"); }, delay);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+      animatedElements.forEach((el) => scrollObserver.observe(el));
+    }
+
+    // --- 4. SITE-WIDE: ACTIVE NAV LINK HIGHLIGHT ---
+    const navLinks = document.querySelectorAll("#main-nav a, #mobile-menu-content #main-nav a");
+    if (navLinks.length > 0) {
+      const currentPath = window.location.pathname.split("/").pop() || "index.html";
+      navLinks.forEach((link) => {
+        const linkHref = link.getAttribute("href").split("/").pop();
+        if (linkHref === currentPath) {
+          link.classList.add("active");
+        } else {
+          link.classList.remove("active");
+        }
+      });
+    }
+
+    // --- 5. INDEX PAGE: SLIDESHOW & STATS COUNTER ---
+    const statNumbers = document.querySelectorAll(".stat-number");
+    if (statNumbers.length > 0) {
+      const statObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const stat = entry.target;
+            const countTo = parseInt(stat.getAttribute("data-count"));
+            animateValue(stat, 0, countTo, 2000);
+            statObserver.unobserve(stat);
+          }
+        });
+      }, { threshold: 0.5 });
+      statNumbers.forEach((stat) => statObserver.observe(stat));
+      function animateValue(obj, start, end, duration) {
+        let startTimestamp = null;
+        const step = (timestamp) => {
+          if (!startTimestamp) startTimestamp = timestamp;
+          const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+          obj.innerHTML = Math.floor(progress * (end - start) + start);
+          if (progress < 1) { window.requestAnimationFrame(step); } else { obj.innerHTML = end; }
+        };
+        window.requestAnimationFrame(step);
+      }
+    }
+    // Hero Slideshow
+    const mobileSlideshow = document.querySelector(".slideshow-container-mobile");
+    const desktopSlideshow = document.querySelector(".slideshow-container-desktop");
+    if (mobileSlideshow || desktopSlideshow) {
+      // (The slideshow logic you already have in index.html is perfect here)
+    }
+
+    // --- 6. CONTACT PAGE: FORM HANDLER ---
+    const form = document.getElementById("contactForm");
+    if (form) {
+      const formStatus = document.getElementById("form-status");
+      async function handleSubmit(event) {
+        event.preventDefault();
+        const data = new FormData(event.target);
+        formStatus.textContent = "Sending...";
+        formStatus.className = "sending";
+        fetch(event.target.action, { method: form.method, body: data, headers: { 'Accept': 'application/json' } })
+          .then(response => {
+            if (response.ok) {
+              formStatus.textContent = "Thanks! We'll be in touch soon.";
+              formStatus.className = "success";
+              form.reset();
+            } else {
+              response.json().then(data => {
+                formStatus.textContent = data.errors ? data.errors.map(e => e.message).join(", ") : "Oops! There was a problem.";
+                formStatus.className = "error";
+              });
+            }
+          }).catch(error => {
+            formStatus.textContent = "Oops! A network error occurred.";
+            formStatus.className = "error";
+          });
+      }
+      form.addEventListener("submit", handleSubmit);
+      const urlParams = new URLSearchParams(window.location.search);
+      const subjectFromUrl = urlParams.get("subject");
+      const subjectDropdown = document.getElementById("subject");
+      if (subjectFromUrl && subjectDropdown) {
+        if ([...subjectDropdown.options].some(opt => opt.value === subjectFromUrl)) {
+          subjectDropdown.value = subjectFromUrl;
+        }
+      }
+    }
+
+    // --- 7. GALLERY PAGE: FILTERS & LIGHTBOX ---
+    const galleryFilters = document.querySelector(".gallery-filters");
+    if (galleryFilters) {
+      // (The gallery & lightbox logic you already have in gallery.html is perfect here)
+    }
+  });
+</script>
+  </body>
+</html>
