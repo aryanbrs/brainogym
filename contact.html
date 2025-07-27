@@ -164,14 +164,13 @@
         <section class="contact-section">
             <div class="container">
                 <div class="contact-grid">
-                    <!-- testing git deployment -->
-
+                    
                     <!-- Left Column: Contact Form -->
                     <div class="contact-form-wrapper" data-animation="fadeInUp">
                         <h3>Send Us a Message</h3>
                         <p>Fill out the form below, and a member of our team will get back to you as soon as possible.</p>
-                        <!-- ===== INTEGRATION COMPLETE: Form action updated to the new FormSubmit.co link ===== -->
-                        <form action="https://formsubmit.co/el/fuyofe" method="POST">
+                        <!-- ===== FORM INTEGRATED WITH FORMSPREE ===== -->
+                        <form id="contact-form" action="https://formspree.io/f/mwpqlabq" method="POST">
                             <div class="form-group"><label for="name">Your Name</label><input type="text" id="name" name="name" class="form-input" required /></div>
                             <div class="form-group"><label for="email">Your Email</label><input type="email" id="email" name="email" class="form-input" required /></div>
                             <div class="form-group"><label for="phone">Phone Number (Optional)</label><input type="tel" id="phone" name="phone" class="form-input" /></div>
@@ -188,12 +187,6 @@
                                 </select>
                             </div>
                             <div class="form-group"><label for="message">Your Message</label><textarea id="message" name="message" rows="5" class="form-input" required></textarea></div>
-                            
-                            <!-- Optional: To redirect to a custom thank you page after submission -->
-                            <!-- <input type="hidden" name="_next" value="https://yourdomain.co/thanks.html"> -->
-                            
-                            <!-- Optional: To disable the reCAPTCHA -->
-                            <!-- <input type="hidden" name="_captcha" value="false"> -->
                             
                             <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
                             <p id="form-status"></p>
@@ -228,7 +221,6 @@
     
     <!-- Footer is consistent across pages -->
     <footer class="site-footer">
-        <!-- The footer HTML from previous pages would go here -->
          <div class="container">
             <div class="copyright">
                 <p>© 2024 BRAINOGYM Educare. All Rights Reserved.</p>
