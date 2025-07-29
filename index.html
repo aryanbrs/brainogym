@@ -188,6 +188,19 @@
             /* Simplified filter: makes the logo white */
             filter: brightness(0) invert(1);
         }
+        /* Style for the new Exam Levels list */
+.levels-list {
+    list-style: none; /* Removes the default bullet points */
+    padding: 0;
+    margin: 0;
+    /* The parent .detail-content is likely aligned left by default, but if not, this helps */
+    text-align: left; 
+    display: inline-block; /* Helps with alignment inside the flex/grid container */
+}
+
+.levels-list li {
+    padding: 2px 0; /* Adds a little vertical spacing between list items */
+}
 
         .footer-heading { color: var(--clr-gold-medium); font-size: 1.3rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
         .footer-links, .footer-contact-info { margin: 0; padding: 0; list-style: none; }
@@ -300,7 +313,25 @@
                     <p class="event-subtitle">The National Championships for Abacus, Vedic Maths, IQ & Robotics</p>
                     <div class="event-details-grid">
                         <div class="detail-item"><div class="detail-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"></path></svg></div><div class="detail-content"><h4>Final Deadline</h4><p>All enrollments must be submitted by <span class="highlight-deadline">29th July 2025</span>.</p></div></div>
-                        <div class="detail-item"><div class="detail-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"></path></svg></div><div class="detail-content"><h4>Exam Format</h4><p>Grade 2–8: 50 Qs (10 min).<br>Grade 1: 30 minutes.</p></div></div>
+                        
+                        <!-- === MODIFIED SECTION START === -->
+                        <div class="detail-item">
+                            <div class="detail-icon">
+                                <!-- New "Layers" Icon for Levels -->
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.99 18.54l-7.37-5.73L3 14.07l9 7 9-7-1.63-1.27-7.38 5.74zM12 16l7.36-5.73L21 9l-9-7-9 7 1.63 1.27L12 16z"></path></svg>
+                            </div>
+                            <div class="detail-content">
+                                <h4>Exam Levels</h4>
+                                <!-- Using a list for better aesthetics and clarity -->
+                                <ul class="levels-list">
+                                    <li>6 Levels of Abacus</li>
+                                    <li>4 Levels of Vedic Maths</li>
+                                    <li>4 Levels of Robotics</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- === MODIFIED SECTION END === -->
+
                         <div class="detail-item"><div class="detail-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-8.5 10.5H9V13h2.5v-1.5H9V10h2.5V8.5H9V7h4v7.5h-1.5zM18 13h-3.5v-1.5h2v-1h-2v-1h2V8h-3.5a1.5 1.5 0 0 0-1.5 1.5v4a1.5 1.5 0 0 0 1.5 1.5H18v-1.5z"></path></svg></div><div class="detail-content"><h4>Enrollment Fee</h4><p>₹550 per participant.</p></div></div>
                         <div class="detail-item"><div class="detail-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"></path></svg></div><div class="detail-content"><h4>Have Questions?</h4><p>Contact the Helpline: <strong>7011177279</strong></p></div></div>
                     </div>
