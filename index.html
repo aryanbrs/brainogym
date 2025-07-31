@@ -501,65 +501,67 @@
             }
 
             // --- 3. DYNAMIC FEATURES: SLIDESHOW & STATS COUNTER ---
-            const slideshowContainer = document.querySelector(".slideshow-container");
-            if (slideshowContainer) {
-                const images = ["1.JPG", "2.JPG", "3.JPG", "4.JPG", "5.JPG", "6.JPG", "7.JPG", "8.JPG", "9.JPG", "10.JPG", "11.JPG","12.jpg", "13.jpg", "14.jpg", "15.jpg", "16.jpg", "17.jpg", "18.jpg", "19.jpg", "20.jpg", "21.jpg", "22.jpg", "23.jpg", "24.jpg", "25.jpg", "26.jpg", "27.jpg"];
- const imagePath = "images/gallery/annual-championships-2024/";
-                let currentSlideIndex = 0;
+                const slideshowContainer = document.querySelector(".slideshow-container");
+if (slideshowContainer) {
+    // --- MODIFIED SECTION ---
+    const images = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg"];
+    const imagePath = "images/banner/";
+    // --- END MODIFIED SECTION ---
 
-                images.forEach((imgFile, index) => {
-                    const slideDiv = document.createElement("div");
-                    slideDiv.className = "slide";
-                    slideDiv.style.backgroundImage = `url(${imagePath}${imgFile})`;
-                    if (index === 0) {
-                        slideDiv.classList.add("active");
-                        const preloadLink = document.createElement('link');
-                        preloadLink.rel = 'preload';
-                        preloadLink.as = 'image';
-                        preloadLink.href = `${imagePath}${imgFile}`;
-                        document.head.appendChild(preloadLink);
-                    }
-                    slideshowContainer.appendChild(slideDiv);
-                });
-                
-                const slides = slideshowContainer.children;
-                if (slides.length > 1) {
-                    setInterval(() => {
-                        slides[currentSlideIndex].classList.remove("active");
-                        currentSlideIndex = (currentSlideIndex + 1) % slides.length;
-                        slides[currentSlideIndex].classList.add("active");
-                    }, 4500);
+    let currentSlideIndex = 0;
+
+    images.forEach((imgFile, index) => {
+        const slideDiv = document.createElement("div");
+        slideDiv.className = "slide";
+        slideDiv.style.backgroundImage = `url(${imagePath}${imgFile})`;
+        if (index === 0) {
+            slideDiv.classList.add("active");
+            const preloadLink = document.createElement('link');
+            preloadLink.rel = 'preload';
+            preloadLink.as = 'image';
+            preloadLink.href = `${imagePath}${imgFile}`;
+            document.head.appendChild(preloadLink);
+        }
+        slideshowContainer.appendChild(slideDiv);
+    });
+
+    const slides = slideshowContainer.children;
+    if (slides.length > 1) {
+        setInterval(() => {
+            slides[currentSlideIndex].classList.remove("active");
+            currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+            slides[currentSlideIndex].classList.add("active");
+        }, 4500);
+    }
+}
+
+const statNumbers = document.querySelectorAll(".stat-number");
+if (statNumbers.length > 0) {
+    const animateValue = (obj, start, end, duration) => {
+        let startTimestamp = null;
+        const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            obj.textContent = Math.floor(progress * (end - start) + start).toLocaleString();
+            if (progress < 1) { window.requestAnimationFrame(step); }
+        };
+        window.requestAnimationFrame(step);
+    };
+
+    const statObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const el = entry.target;
+                if (!el.dataset.animated) {
+                    const countTo = parseInt(el.dataset.count, 10);
+                    animateValue(el, 0, countTo, 2000);
+                    el.dataset.animated = 'true';
                 }
             }
-
-            const statNumbers = document.querySelectorAll(".stat-number");
-            if (statNumbers.length > 0) {
-                const animateValue = (obj, start, end, duration) => {
-                    let startTimestamp = null;
-                    const step = (timestamp) => {
-                        if (!startTimestamp) startTimestamp = timestamp;
-                        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                        obj.textContent = Math.floor(progress * (end - start) + start).toLocaleString();
-                        if (progress < 1) { window.requestAnimationFrame(step); }
-                    };
-                    window.requestAnimationFrame(step);
-                };
-
-                const statObserver = new IntersectionObserver((entries, observer) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            const el = entry.target;
-                            if (!el.dataset.animated) {
-                                const countTo = parseInt(el.dataset.count, 10);
-                                animateValue(el, 0, countTo, 2000);
-                                el.dataset.animated = 'true';
-                            }
-                        }
-                    });
-                }, { threshold: 0.5 });
-                statNumbers.forEach(stat => statObserver.observe(stat));
-            }
-
+        });
+    }, { threshold: 0.5 });
+    statNumbers.forEach(stat => statObserver.observe(stat));
+}
             // --- 4. UI ENHANCEMENTS: SCROLL ANIMATIONS & ACTIVE NAV ---
             const animatedElements = document.querySelectorAll("[data-animation]");
             if (animatedElements.length > 0) {
