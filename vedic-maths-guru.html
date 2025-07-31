@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Our Courses - BRAINOGYM Educare Programs</title>
+    <title>Vedic Maths Guru Program - BRAINOGYM Educare</title>
     <link rel="icon" href="logos/BRAINOGYM-favicon.ico" type="image/x-icon" />
 
     <!-- Google Fonts for the "Golden Theme" -->
@@ -97,49 +97,13 @@
         #main-nav-links li a.active-nav { color: var(--clr-gold-deep); }
         .btn-nav-enquire { margin-left: 0; margin-top: 2rem; font-size: 1.2rem; }
         
-        /* 4. PAGE-SPECIFIC STYLES (COURSES PAGE) */
-        .page-hero { padding: 8rem 0 4rem 0; background-color: var(--clr-gold-pale); text-align: center; }
-
-        /* Course Quick Navigation */
-        .course-quick-nav {
-            padding: 3rem 0 0;
-            text-align: center;
-        }
-        .course-nav-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-        .course-nav-buttons .btn {
-            flex-grow: 1;
-        }
-
-        .course-feature { padding: 4rem 0; }
-        .course-feature:first-of-type { padding-top: 2rem; } /* Reduce top padding for the first course after nav */
-        .course-feature-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; align-items: center; }
-        .course-feature-image a { display: block; transition: transform var(--transition-smooth); }
-        .course-feature-image a:hover { transform: scale(1.03); }
-        .course-feature-image img { border-radius: var(--border-radius-lg); box-shadow: var(--shadow-medium); }
-        
-        .course-title-link { text-decoration: none; color: inherit; }
-        .course-title-link:hover h3 { color: var(--clr-brown-dark); }
-        
-        .course-feature-details h3 { color: var(--clr-gold-deep); transition: color var(--transition-smooth); }
-        .course-feature-details h4 { font-size: 1.2rem; margin-bottom: 1em; color: var(--clr-brown-dark); }
-        .benefits-list { list-style: none; padding-left: 1.5rem; margin: 1.5rem 0; }
-        .benefits-list li { position: relative; margin-bottom: 0.75rem; padding-left: 1rem; }
-        .benefits-list li::before { content: "✓"; color: var(--clr-gold-medium); font-weight: 900; position: absolute; left: -1rem; top: 1px; }
-        .target-audience { font-style: italic; color: var(--clr-brown-medium); }
-        .target-audience strong { font-style: normal; color: var(--clr-brown-dark); }
-        .course-button-group {
-            margin-top: 1.5rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            align-items: center;
-        }
+        /* 4. PAGE-SPECIFIC STYLES (COURSE DETAIL PAGES) */
+        .page-hero { padding: 10rem 0 4rem 0; background-color: var(--clr-gold-pale); text-align: center; } /* Increased top padding */
+        .downloads-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+        .download-card { background: var(--clr-white); padding: 2rem; border-radius: var(--border-radius-lg); box-shadow: var(--shadow-light); transition: all var(--transition-smooth); text-align: center; }
+        .download-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-medium); }
+        .download-card h3 { color: var(--clr-gold-deep); }
+        .download-card-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 1.5rem; }
         
         /* Final CTA & Footer - IDENTICAL TO OTHER PAGES */
         .cta-buttons-final { display: flex; flex-direction: column; align-items: center; gap: 1rem; margin-top: 2rem; }
@@ -170,13 +134,8 @@
         /* --- TABLET STYLES (min-width: 768px) --- */
         @media (min-width: 768px) {
             .content-section { padding: 5rem 0; }
-            .course-quick-nav { padding: 4rem 0 0; }
-            .course-nav-buttons .btn { flex-grow: 0; }
-            .course-feature { padding: 5rem 0; }
-            .course-feature:first-of-type { padding-top: 3rem; }
             .logo-text-svg { height: 28px; }
-            .course-feature-grid { grid-template-columns: 1fr 1fr; gap: 3rem; }
-            .course-feature-grid.alt-layout .course-feature-image { order: 2; }
+            .downloads-grid { grid-template-columns: 1fr 1fr; }
             .cta-buttons-final { flex-direction: row; justify-content: center; }
             .footer-grid { grid-template-columns: repeat(2, 1fr); text-align: left; }
             .footer-logo-img, .social-icons { margin-left: 0; justify-content: flex-start; }
@@ -214,7 +173,7 @@
                 <ul id="main-nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
-                    <li><a href="courses.html" class="active-nav">Courses</a></li> <!-- Active link is updated -->
+                    <li><a href="courses.html" class="active-nav">Courses</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
@@ -230,135 +189,55 @@
         <!-- ======================= PAGE HERO ======================= -->
         <section class="page-hero">
             <div class="container" data-animation="fadeInUp">
-                <h1>Unlock Your Child's <span class="highlight-gold">Full Potential</span></h1>
-                <p class="section-intro">Our specialized programs are meticulously designed to enhance cognitive abilities, foster creativity, and build a strong foundation for a bright future.</p>
+                <h1>Vedic Maths Guru Program</h1>
+                <p class="section-intro">Unlocking the Secrets of Ancient High-Speed Mental Calculation.</p>
+            </div>
+        </section>
+
+        <!-- ======================= DOWNLOADABLE RESOURCES ======================= -->
+        <section class="content-section">
+            <div class="container" data-animation="fadeInUp">
+                <h2 class="section-title text-center">Download Practice Sutras</h2>
+                <p class="section-intro text-center">Explore the power of Vedic Maths with these practice sheets based on key sutras.</p>
+                
+                <!-- INSTRUCTION: To add more papers, copy an entire "download-card" div and paste it inside the "downloads-grid" div below. -->
+                <div class="downloads-grid">
+                    
+                    <!-- START: Download Card 1 -->
+                    <div class="download-card" data-animation="fadeInLeft" data-delay="100">
+                        <h3>Nikhilam Sutra Practice</h3>
+                        <p>Practice multiplication for numbers near the base (10, 100, 1000).</p>
+                        <div class="download-card-buttons">
+                           <!-- INSTRUCTION: Paste your G-Drive DIRECT DOWNLOAD link in the href attribute below -->
+                           <a href="downloads/vedic-maths-nikhilam.pdf" class="btn btn-primary" download>Download PDF</a>
+                           <!-- INSTRUCTION: Paste your G-Drive VIEW/PREVIEW link in the href attribute below -->
+                           <a href="downloads/vedic-maths-nikhilam.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Online</a>
+                        </div>
+                    </div>
+                    <!-- END: Download Card 1 -->
+                    
+                    <!-- START: Download Card 2 -->
+                    <div class="download-card" data-animation="fadeInRight" data-delay="200">
+                        <h3>Ekadhikena Purvena Practice</h3>
+                        <p>Learn to quickly square numbers ending in 5 using this simple and effective sutra.</p>
+                        <div class="download-card-buttons">
+                           <!-- INSTRUCTION: Paste your G-Drive DIRECT DOWNLOAD link in the href attribute below -->
+                           <a href="downloads/vedic-maths-ekadhikena.pdf" class="btn btn-primary" download>Download PDF</a>
+                           <!-- INSTRUCTION: Paste your G-Drive VIEW/PREVIEW link in the href attribute below -->
+                           <a href="downloads/vedic-maths-ekadhikena.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Online</a>
+                        </div>
+                    </div>
+                    <!-- END: Download Card 2 -->
+
+                </div>
             </div>
         </section>
         
-        <!-- ======================= QUICK COURSE NAVIGATION ======================= -->
-        <section class="course-quick-nav">
-            <div class="container" data-animation="fadeInUp" data-delay="100">
-                <h2 class="section-title">Explore Our Programs</h2>
-                <div class="course-nav-buttons">
-                    <a href="abacus-guru.html" class="btn btn-secondary">Abacus Guru</a>
-                    <a href="vedic-maths-guru.html" class="btn btn-secondary">Vedic Maths Guru</a>
-                    <a href="robotics-for-kids.html" class="btn btn-secondary">Robotics for Kids</a>
-                    <a href="personality-development.html" class="btn btn-secondary">Personality Development</a>
-                </div>
-            </div>
-        </section>
-
-        <div class="container">
-            <!-- Course 1: Abacus Guru -->
-            <section id="abacus" class="course-feature">
-                <div class="course-feature-grid">
-                    <div class="course-feature-image" data-animation="fadeInLeft">
-                        <a href="abacus-guru.html"><img src="images/course-abacus.jpg" alt="Children learning with an abacus tool"/></a>
-                    </div>
-                    <div class="course-feature-details" data-animation="fadeInRight" data-delay="100">
-                        <a href="abacus-guru.html" class="course-title-link"><h3>Abacus Guru</h3></a>
-                        <h4>Master Mental Arithmetic & Boost Brain Power</h4>
-                        <p>Our acclaimed Abacus program develops exceptional mental math skills, improves concentration, and enhances memory. Children learn to perform complex calculations with speed and accuracy, building confidence and a love for numbers.</p>
-                        <ul class="benefits-list">
-                            <li>Improved Calculation Speed</li>
-                            <li>Enhanced Concentration & Focus</li>
-                            <li>Stronger Memory Retention</li>
-                            <li>Increased Self-Confidence</li>
-                        </ul>
-                        <p class="target-audience"><strong>Ideal for Ages:</strong> 5-14 years.</p>
-                        <div class="course-button-group">
-                             <a href="abacus-guru.html" class="btn btn-primary">See More</a>
-                             <a href="contact.html?subject=Abacus Program" class="btn btn-secondary">Enquire Now</a>
-                             <a href="abacus-guru.html#sample-paper" class="btn btn-secondary">See Sample Paper</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Course 2: Vedic Maths Guru -->
-            <section id="vedic-maths" class="course-feature">
-                <div class="course-feature-grid alt-layout">
-                    <div class="course-feature-image" data-animation="fadeInRight">
-                        <a href="vedic-maths-guru.html"><img src="images/course-vedic-maths.jpg" alt="Illustrations of Vedic Maths concepts"/></a>
-                    </div>
-                    <div class="course-feature-details" data-animation="fadeInLeft" data-delay="100">
-                        <a href="vedic-maths-guru.html" class="course-title-link"><h3>Vedic Maths Guru</h3></a>
-                        <h4>Unlock High-Speed Calculation Secrets</h4>
-                        <p>Discover the magic of Vedic Mathematics, an ancient system of sutras that simplifies complex calculations. Our program makes math intuitive and faster, reducing math anxiety and sharpening the mind.</p>
-                        <ul class="benefits-list">
-                            <li>Calculate 10-15 times faster</li>
-                            <li>Reduces scratch work & errors</li>
-                            <li>Improves logical thinking</li>
-                            <li>Makes mathematics enjoyable</li>
-                        </ul>
-                        <p class="target-audience"><strong>Ideal for Ages:</strong> 11+ years (Grade 6 upwards).</p>
-                        <div class="course-button-group">
-                            <a href="vedic-maths-guru.html" class="btn btn-primary">See More</a>
-                            <a href="contact.html?subject=Vedic Maths Program" class="btn btn-secondary">Enquire Now</a>
-                            <a href="vedic-maths-guru.html#sample-paper" class="btn btn-secondary">See Sample Paper</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Course 3: Robotics for Kids -->
-            <section id="robotics" class="course-feature">
-                <div class="course-feature-grid">
-                    <div class="course-feature-image" data-animation="fadeInLeft">
-                        <a href="robotics-for-kids.html"><img src="images/course-robotics.jpg" alt="Kids building robots"/></a>
-                    </div>
-                    <div class="course-feature-details" data-animation="fadeInRight" data-delay="100">
-                        <a href="robotics-for-kids.html" class="course-title-link"><h3>Robotics for Kids</h3></a>
-                        <h4>Build, Code, and Innovate</h4>
-                        <p>Our program introduces children to the exciting world of STEM. Through hands-on projects, students learn to design, build, and program robots, developing critical thinking, problem-solving, and teamwork skills for the future.</p>
-                        <ul class="benefits-list">
-                            <li>Hands-on STEM experience</li>
-                            <li>Develops problem-solving skills</li>
-                            <li>Encourages creativity & innovation</li>
-                            <li>Fosters teamwork & collaboration</li>
-                        </ul>
-                        <p class="target-audience"><strong>Ideal for Ages:</strong> 8+ years.</p>
-                        <div class="course-button-group">
-                            <a href="robotics-for-kids.html" class="btn btn-primary">See More</a>
-                            <a href="contact.html?subject=Robotics Program" class="btn btn-secondary">Enquire Now</a>
-                            <a href="robotics-for-kids.html#sample-content" class="btn btn-secondary">See Sample Content</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Course 4: Personality Development -->
-            <section id="personality" class="course-feature">
-                <div class="course-feature-grid alt-layout">
-                    <div class="course-feature-image" data-animation="fadeInRight">
-                        <a href="personality-development.html"><img src="images/course-personality.jpg" alt="Confident children communicating and presenting"/></a>
-                    </div>
-                    <div class="course-feature-details" data-animation="fadeInLeft" data-delay="100">
-                        <a href="personality-development.html" class="course-title-link"><h3>Personality Development</h3></a>
-                        <h4>Shape Confident & Articulate Individuals</h4>
-                        <p>Beyond academics, we focus on holistic growth. This program aims to enhance communication skills, build self-esteem, improve public speaking, and cultivate leadership qualities for success in all aspects of life.</p>
-                        <ul class="benefits-list">
-                            <li>Improved communication skills</li>
-                            <li>Increased self-confidence</li>
-                            <li>Enhanced public speaking ability</li>
-                            <li>Development of leadership qualities</li>
-                        </ul>
-                        <p class="target-audience"><strong>Ideal for:</strong> Children & teenagers.</p>
-                        <div class="course-button-group">
-                            <a href="personality-development.html" class="btn btn-primary">See More</a>
-                            <a href="contact.html?subject=Personality Development" class="btn btn-secondary">Enquire Now</a>
-                            <a href="personality-development.html#curriculum" class="btn btn-secondary">View Curriculum</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-
         <!-- ======================= FINAL CTA SECTION ======================= -->
         <section id="final-cta" class="content-section bg-gold-gradient">
             <div class="container text-center">
-                <h2 class="section-title-light" data-animation="fadeInUp">Find the Perfect Program <span class="highlight-gold">For Your Child</span></h2>
-                <p class="section-intro-light" data-animation="fadeInUp" data-delay="100">Not sure which program is the best fit? Contact us today for a personalized consultation. Let's unlock your child's potential together!</p>
+                <h2 class="section-title-light" data-animation="fadeInUp">Have Questions? <span class="highlight-gold">Get in Touch!</span></h2>
+                <p class="section-intro-light" data-animation="fadeInUp" data-delay="100">If you need help or want to know more about our full programs, contact us today for a personalized consultation.</p>
                 <div class="cta-buttons-final" data-animation="fadeInUp" data-delay="200">
                     <a href="contact.html" class="btn btn-light">Get a Consultation</a>
                     <a href="tel:09015313290" class="btn btn-light-outline">Call Us Now</a>
@@ -434,7 +313,9 @@
                 const currentPage = window.location.pathname.split("/").pop();
                 navLinks.forEach(link => {
                     const linkPage = link.getAttribute("href").split("/").pop();
-                    if (linkPage === currentPage) {
+                    if (linkPage === 'courses.html') {
+                        link.classList.add("active-nav");
+                    } else if (linkPage === currentPage) {
                         link.classList.add("active-nav");
                     } else {
                         link.classList.remove("active-nav");
