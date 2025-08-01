@@ -43,7 +43,7 @@
         html { font-size: 16px; scroll-behavior: smooth; }
         body { font-family: var(--font-body); color: var(--clr-brown-dark); background-color: var(--clr-bg-main); line-height: 1.7; overflow-x: hidden; opacity: 0; transition: opacity 0.5s ease-in-out; }
         body.loaded { opacity: 1; }
-        body.menu-open { overflow: hidden; }
+        body.menu-open, body.modal-open { overflow: hidden; } /* Updated */
         img, svg { max-width: 100%; height: auto; display: block; }
         ul { list-style: none; }
         a { text-decoration: none; color: var(--clr-gold-medium); transition: color 0.2s; }
@@ -98,13 +98,25 @@
         .btn-nav-enquire { margin-left: 0; margin-top: 2rem; font-size: 1.2rem; }
         
         /* 4. PAGE-SPECIFIC STYLES (COURSE DETAIL PAGES) */
-        .page-hero { padding: 10rem 0 4rem 0; background-color: var(--clr-gold-pale); text-align: center; } /* Increased top padding */
+        .page-hero { padding: 10rem 0 4rem 0; background-color: var(--clr-gold-pale); text-align: center; }
         .downloads-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
         .download-card { background: var(--clr-white); padding: 2rem; border-radius: var(--border-radius-lg); box-shadow: var(--shadow-light); transition: all var(--transition-smooth); text-align: center; }
         .download-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-medium); }
         .download-card h3 { color: var(--clr-gold-deep); }
         .download-card-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 1.5rem; }
         
+        /* 4A. PDF MODAL STYLES (NEW) */
+        .pdf-modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(49, 38, 29, 0.8); z-index: 2000; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease; }
+        .pdf-modal { position: fixed; top: 50%; left: 50%; width: 90%; height: 90vh; max-width: 900px; background-color: var(--clr-white); z-index: 2001; border-radius: var(--border-radius-lg); box-shadow: 0 10px 30px rgba(0,0,0,0.2); transform: translate(-50%, -50%) scale(0.9); opacity: 0; visibility: hidden; transition: all 0.3s ease; display: flex; flex-direction: column; }
+        .pdf-modal-overlay.show { opacity: 1; visibility: visible; }
+        .pdf-modal.show { transform: translate(-50%, -50%) scale(1); opacity: 1; visibility: visible; }
+        .pdf-modal-header { display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1.5rem; border-bottom: 1px solid var(--clr-gold-pale); }
+        .pdf-modal-title { font-family: var(--font-body); font-size: 1.1rem; color: var(--clr-brown-dark); margin: 0; }
+        .pdf-modal-close { background: none; border: none; font-size: 2rem; line-height: 1; cursor: pointer; color: var(--clr-brown-medium); padding: 0.25rem; transition: color var(--transition-smooth); }
+        .pdf-modal-close:hover { color: var(--clr-brown-dark); }
+        .pdf-modal-body { flex-grow: 1; padding: 0; overflow: hidden; }
+        .pdf-modal-iframe { width: 100%; height: 100%; border: none; }
+
         /* Final CTA & Footer - IDENTICAL TO OTHER PAGES */
         .cta-buttons-final { display: flex; flex-direction: column; align-items: center; gap: 1rem; margin-top: 2rem; }
         .site-footer { background-color: var(--clr-bg-footer); color: var(--clr-gold-pale); padding: 3rem 0 1.5rem; }
@@ -146,6 +158,7 @@
         @media (min-width: 1024px) {
             h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); }
             #menu-toggle { display: none; }
+            .downloads-grid { grid-template-columns: repeat(3, 1fr); } /* Changed to 3 columns */
             #main-nav { display: flex; position: static; transform: none; flex-direction: row; align-items: center; width: auto; height: auto; padding: 0; background-color: transparent; backdrop-filter: none; }
             #main-nav-links { flex-direction: row; gap: 1.5rem; width: auto; }
             #main-nav-links li a { font-size: 0.95rem; padding: 0.5em 0; position: relative; }
@@ -187,7 +200,7 @@
 
     <main>
         <!-- ======================= PAGE HERO ======================= -->
-        <section class="page-hero">
+        <section class="page-hero bg-pale-gold">
             <div class="container" data-animation="fadeInUp">
                 <h1>Vedic Maths Guru Program</h1>
                 <p class="section-intro">Unlocking the Secrets of Ancient High-Speed Mental Calculation.</p>
@@ -197,37 +210,43 @@
         <!-- ======================= DOWNLOADABLE RESOURCES ======================= -->
         <section class="content-section">
             <div class="container" data-animation="fadeInUp">
-                <h2 class="section-title text-center">Download Practice Sutras</h2>
-                <p class="section-intro text-center">Explore the power of Vedic Maths with these practice sheets based on key sutras.</p>
+                <h2 class="section-title text-center">Vedic Maths: Sample Papers</h2>
+                <p class="section-intro text-center">Explore the power of Vedic Maths with these sample papers. Click to view online or download for later.</p>
                 
-                <!-- INSTRUCTION: To add more papers, copy an entire "download-card" div and paste it inside the "downloads-grid" div below. -->
                 <div class="downloads-grid">
                     
                     <!-- START: Download Card 1 -->
                     <div class="download-card" data-animation="fadeInLeft" data-delay="100">
-                        <h3>Nikhilam Sutra Practice</h3>
-                        <p>Practice multiplication for numbers near the base (10, 100, 1000).</p>
+                        <h3>Vedic Maths - Fresher</h3>
+                        <p>An introduction to foundational concepts and simple sutras for beginners.</p>
                         <div class="download-card-buttons">
-                           <!-- INSTRUCTION: Paste your G-Drive DIRECT DOWNLOAD link in the href attribute below -->
-                           <a href="downloads/vedic-maths-nikhilam.pdf" class="btn btn-primary" download>Download PDF</a>
-                           <!-- INSTRUCTION: Paste your G-Drive VIEW/PREVIEW link in the href attribute below -->
-                           <a href="downloads/vedic-maths-nikhilam.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Online</a>
+                           <a href="downloads/vedic-maths-level-fresher.pdf" class="btn btn-primary" download>Download PDF</a>
+                           <button class="btn btn-secondary open-pdf-modal" data-pdf-src="downloads/vedic-maths-level-fresher.pdf" data-pdf-title="Vedic Maths - Fresher">View Online</button>
                         </div>
                     </div>
                     <!-- END: Download Card 1 -->
                     
                     <!-- START: Download Card 2 -->
-                    <div class="download-card" data-animation="fadeInRight" data-delay="200">
-                        <h3>Ekadhikena Purvena Practice</h3>
-                        <p>Learn to quickly square numbers ending in 5 using this simple and effective sutra.</p>
+                    <div class="download-card" data-animation="fadeInUp" data-delay="200">
+                        <h3>Vedic Maths - Level 1</h3>
+                        <p>Practice sheets covering key multiplication and division techniques.</p>
                         <div class="download-card-buttons">
-                           <!-- INSTRUCTION: Paste your G-Drive DIRECT DOWNLOAD link in the href attribute below -->
-                           <a href="downloads/vedic-maths-ekadhikena.pdf" class="btn btn-primary" download>Download PDF</a>
-                           <!-- INSTRUCTION: Paste your G-Drive VIEW/PREVIEW link in the href attribute below -->
-                           <a href="downloads/vedic-maths-ekadhikena.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Online</a>
+                           <a href="downloads/vedic-maths-level-1.pdf" class="btn btn-primary" download>Download PDF</a>
+                           <button class="btn btn-secondary open-pdf-modal" data-pdf-src="downloads/vedic-maths-level-1.pdf" data-pdf-title="Vedic Maths - Level 1">View Online</button>
                         </div>
                     </div>
                     <!-- END: Download Card 2 -->
+                    
+                    <!-- START: Download Card 3 -->
+                    <div class="download-card" data-animation="fadeInRight" data-delay="300">
+                        <h3>Vedic Maths - Level 2</h3>
+                        <p>Advanced problems including squares, cubes, and complex calculations.</p>
+                        <div class="download-card-buttons">
+                           <a href="downloads/vedic-maths-level-2.pdf" class="btn btn-primary" download>Download PDF</a>
+                           <button class="btn btn-secondary open-pdf-modal" data-pdf-src="downloads/vedic-maths-level-2.pdf" data-pdf-title="Vedic Maths - Level 2">View Online</button>
+                        </div>
+                    </div>
+                    <!-- END: Download Card 3 -->
 
                 </div>
             </div>
@@ -245,6 +264,18 @@
             </div>
         </section>
     </main>
+
+    <!-- ======================= PDF MODAL (NEW) ======================= -->
+    <div class="pdf-modal-overlay" id="pdf-modal-overlay"></div>
+    <div class="pdf-modal" id="pdf-modal">
+        <div class="pdf-modal-header">
+            <h4 class="pdf-modal-title" id="pdf-modal-title">PDF Document</h4>
+            <button class="pdf-modal-close" id="pdf-modal-close" aria-label="Close PDF viewer">×</button>
+        </div>
+        <div class="pdf-modal-body">
+            <iframe class="pdf-modal-iframe" id="pdf-modal-iframe" frameborder="0" title="PDF Viewer"></iframe>
+        </div>
+    </div>
 
     <!-- ======================= FOOTER ======================= -->
     <footer class="site-footer">
@@ -328,6 +359,50 @@
             if (yearSpan) {
                 yearSpan.textContent = new Date().getFullYear();
             }
+
+            // 5. PDF MODAL VIEWER (NEW)
+            const modal = document.getElementById('pdf-modal');
+            const overlay = document.getElementById('pdf-modal-overlay');
+            const iframe = document.getElementById('pdf-modal-iframe');
+            const modalTitle = document.getElementById('pdf-modal-title');
+            const openButtons = document.querySelectorAll('.open-pdf-modal');
+            const closeButton = document.getElementById('pdf-modal-close');
+
+            const openModal = (pdfSrc, pdfTitle) => {
+                if (!modal || !iframe) return;
+                iframe.setAttribute('src', pdfSrc);
+                modalTitle.textContent = pdfTitle;
+                modal.classList.add('show');
+                overlay.classList.add('show');
+                document.body.classList.add('modal-open');
+            };
+
+            const closeModal = () => {
+                if (!modal || !iframe) return;
+                modal.classList.remove('show');
+                overlay.classList.remove('show');
+                document.body.classList.remove('modal-open');
+                // Important: Clear the iframe src to stop the PDF from loading in the background
+                iframe.setAttribute('src', '');
+            };
+
+            openButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const pdfSrc = button.dataset.pdfSrc;
+                    const pdfTitle = button.dataset.pdfTitle;
+                    openModal(pdfSrc, pdfTitle);
+                });
+            });
+            
+            if(closeButton) closeButton.addEventListener('click', closeModal);
+            if(overlay) overlay.addEventListener('click', closeModal);
+            
+            // Close modal on escape key press
+            document.addEventListener('keydown', (e) => {
+                if (e.key === "Escape" && modal.classList.contains('show')) {
+                    closeModal();
+                }
+            });
         });
     </script>
 </body>

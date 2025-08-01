@@ -43,7 +43,7 @@
         html { font-size: 16px; scroll-behavior: smooth; }
         body { font-family: var(--font-body); color: var(--clr-brown-dark); background-color: var(--clr-bg-main); line-height: 1.7; overflow-x: hidden; opacity: 0; transition: opacity 0.5s ease-in-out; }
         body.loaded { opacity: 1; }
-        body.menu-open { overflow: hidden; }
+        body.menu-open, body.modal-open { overflow: hidden; }
         img, svg { max-width: 100%; height: auto; display: block; }
         ul { list-style: none; }
         a { text-decoration: none; color: var(--clr-gold-medium); transition: color 0.2s; }
@@ -105,6 +105,18 @@
         .download-card h3 { color: var(--clr-gold-deep); }
         .download-card-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 1.5rem; }
         
+        /* 4A. PDF MODAL STYLES */
+        .pdf-modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(49, 38, 29, 0.8); z-index: 2000; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease; }
+        .pdf-modal { position: fixed; top: 50%; left: 50%; width: 90%; height: 90vh; max-width: 900px; background-color: var(--clr-white); z-index: 2001; border-radius: var(--border-radius-lg); box-shadow: 0 10px 30px rgba(0,0,0,0.2); transform: translate(-50%, -50%) scale(0.9); opacity: 0; visibility: hidden; transition: all 0.3s ease; display: flex; flex-direction: column; }
+        .pdf-modal-overlay.show { opacity: 1; visibility: visible; }
+        .pdf-modal.show { transform: translate(-50%, -50%) scale(1); opacity: 1; visibility: visible; }
+        .pdf-modal-header { display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1.5rem; border-bottom: 1px solid var(--clr-gold-pale); }
+        .pdf-modal-title { font-family: var(--font-body); font-size: 1.1rem; color: var(--clr-brown-dark); margin: 0; }
+        .pdf-modal-close { background: none; border: none; font-size: 2rem; line-height: 1; cursor: pointer; color: var(--clr-brown-medium); padding: 0.25rem; transition: color var(--transition-smooth); }
+        .pdf-modal-close:hover { color: var(--clr-brown-dark); }
+        .pdf-modal-body { flex-grow: 1; padding: 0; overflow: hidden; }
+        .pdf-modal-iframe { width: 100%; height: 100%; border: none; }
+
         /* Final CTA & Footer - IDENTICAL TO OTHER PAGES */
         .cta-buttons-final { display: flex; flex-direction: column; align-items: center; gap: 1rem; margin-top: 2rem; }
         .site-footer { background-color: var(--clr-bg-footer); color: var(--clr-gold-pale); padding: 3rem 0 1.5rem; }
@@ -146,6 +158,7 @@
         @media (min-width: 1024px) {
             h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); }
             #menu-toggle { display: none; }
+            .downloads-grid { grid-template-columns: repeat(3, 1fr); } /* Changed to 3 columns for desktop */
             #main-nav { display: flex; position: static; transform: none; flex-direction: row; align-items: center; width: auto; height: auto; padding: 0; background-color: transparent; backdrop-filter: none; }
             #main-nav-links { flex-direction: row; gap: 1.5rem; width: auto; }
             #main-nav-links li a { font-size: 0.95rem; padding: 0.5em 0; position: relative; }
@@ -192,34 +205,62 @@
                 <h2 class="section-title text-center">Abacus Guru: Sample Papers</h2>
                 <p class="section-intro text-center">Get a feel for our program with these sample papers. Download and practice to see the BRAINOGYM difference.</p>
                 
-                <!-- INSTRUCTION: To add more papers, copy an entire "download-card" div and paste it inside the "downloads-grid" div below. -->
                 <div class="downloads-grid">
                     
                     <!-- START: Download Card 1 -->
                     <div class="download-card" data-animation="fadeInLeft" data-delay="100">
-                        <h3>Level 1 - Starter Paper</h3>
+                        <h3>Basic Level - Fresher (J)</h3>
                         <p>An introduction to the abacus and basic bead movements. Perfect for new students.</p>
                         <div class="download-card-buttons">
-                            <!-- INSTRUCTION: Paste your G-Drive DIRECT DOWNLOAD link in the href attribute below -->
-                            <a href="downloads/abacus-level-1-paper.pdf" class="btn btn-primary" download>Download PDF</a>
-                            <!-- INSTRUCTION: Paste your G-Drive VIEW/PREVIEW link in the href attribute below -->
-                            <a href="downloads/abacus-level-1-paper.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Online</a>
+                            <a href="downloads/Basic Level-Fresher (J).pdf" class="btn btn-primary" download>Download PDF</a>
+                            <button class="btn btn-secondary open-pdf-modal" data-pdf-src="downloads/Basic Level-Fresher (J).pdf" data-pdf-title="Basic Level - Fresher (J)">View Online</button>
                         </div>
                     </div>
                     <!-- END: Download Card 1 -->
                     
                     <!-- START: Download Card 2 -->
-                    <div class="download-card" data-animation="fadeInRight" data-delay="200">
-                        <h3>Level 3 - Intermediate Challenge</h3>
-                        <p>Practice paper for students comfortable with addition and subtraction, introducing multiplication concepts.</p>
+                    <div class="download-card" data-animation="fadeInUp" data-delay="200">
+                        <h3>Basic Level - 2</h3>
+                        <p>Practice paper building on fundamental skills with more complex calculations.</p>
                         <div class="download-card-buttons">
-                           <!-- INSTRUCTION: Paste your G-Drive DIRECT DOWNLOAD link in the href attribute below -->
-                           <a href="downloads/abacus-level-3-paper.pdf" class="btn btn-primary" download>Download PDF</a>
-                           <!-- INSTRUCTION: Paste your G-Drive VIEW/PREVIEW link in the href attribute below -->
-                           <a href="downloads/abacus-level-3-paper.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Online</a>
+                           <a href="downloads/Basic Level-2.pdf" class="btn btn-primary" download>Download PDF</a>
+                           <button class="btn btn-secondary open-pdf-modal" data-pdf-src="downloads/Basic Level-2.pdf" data-pdf-title="Basic Level - 2">View Online</button>
                         </div>
                     </div>
                     <!-- END: Download Card 2 -->
+
+                    <!-- START: Download Card 3 (NEW) -->
+                    <div class="download-card" data-animation="fadeInRight" data-delay="300">
+                        <h3>Basic Level - 3</h3>
+                        <p>Further challenges in arithmetic, focusing on speed and accuracy.</p>
+                        <div class="download-card-buttons">
+                           <a href="downloads/Basic Level-3.pdf" class="btn btn-primary" download>Download PDF</a>
+                           <button class="btn btn-secondary open-pdf-modal" data-pdf-src="downloads/Basic Level-3.pdf" data-pdf-title="Basic Level - 3">View Online</button>
+                        </div>
+                    </div>
+                    <!-- END: Download Card 3 -->
+
+                    <!-- START: Download Card 4 -->
+                    <div class="download-card" data-animation="fadeInLeft" data-delay="100">
+                        <h3>Basic Level - 4</h3>
+                        <p>Further challenges in arithmetic, focusing on speed and accuracy.</p>
+                        <div class="download-card-buttons">
+                            <a href="downloads/Basic Level-4.pdf" class="btn btn-primary" download>Download PDF</a>
+                            <button class="btn btn-secondary open-pdf-modal" data-pdf-src="downloads/Basic Level-4.pdf" data-pdf-title="Basic Level - Fresher (J)">View Online</button>
+                        </div>
+                    </div>
+                    <!-- END: Download Card 4 -->
+
+                     <!-- START: Download Card 5 -->
+                    <div class="download-card" data-animation="fadeInLeft" data-delay="100">
+                        <h3>Basic Level - 5</h3>
+                        <p>Further challenges in arithmetic, focusing on speed and accuracy.</p>
+                        <div class="download-card-buttons">
+                            <a href="downloads/Basic Level-5.pdf" class="btn btn-primary" download>Download PDF</a>
+                            <button class="btn btn-secondary open-pdf-modal" data-pdf-src="downloads/Basic Level-5.pdf" data-pdf-title="Basic Level - Fresher (J)">View Online</button>
+                        </div>
+                    </div>
+                    <!-- END: Download Card 5 -->
 
                 </div>
             </div>
@@ -237,6 +278,19 @@
             </div>
         </section>
     </main>
+
+    <!-- ======================= PDF MODAL ======================= -->
+    <div class="pdf-modal-overlay" id="pdf-modal-overlay"></div>
+    <div class="pdf-modal" id="pdf-modal">
+        <div class="pdf-modal-header">
+            <h4 class="pdf-modal-title" id="pdf-modal-title">PDF Document</h4>
+            <button class="pdf-modal-close" id="pdf-modal-close" aria-label="Close PDF viewer">×</button>
+        </div>
+        <div class="pdf-modal-body">
+            <iframe class="pdf-modal-iframe" id="pdf-modal-iframe" frameborder="0" title="PDF Viewer"></iframe>
+        </div>
+    </div>
+
 
     <!-- ======================= FOOTER ======================= -->
     <footer class="site-footer">
@@ -285,7 +339,7 @@
                 });
             }
             
-            // 3. UI ENHANCEMENTS: SCROLL ANIMATIONS & ACTIVE NAV
+            // 3. UI ENHANCEMENTS: SCROLL ANIMATIONS
             const animatedElements = document.querySelectorAll("[data-animation]");
             if (animatedElements.length > 0) {
                 const animationObserver = new IntersectionObserver((entries, observer) => {
@@ -300,6 +354,7 @@
                 animatedElements.forEach(el => animationObserver.observe(el));
             }
             
+            // 4. UTILITIES: ACTIVE NAV & FOOTER YEAR
             const navLinks = document.querySelectorAll("#main-nav-links a");
             if (navLinks.length > 0) {
                 const currentPage = window.location.pathname.split("/").pop();
@@ -314,12 +369,54 @@
                     }
                 });
             }
-
-            // 4. UTILITIES: FOOTER YEAR
             const yearSpan = document.getElementById("current-year");
             if (yearSpan) {
                 yearSpan.textContent = new Date().getFullYear();
             }
+
+            // 5. PDF MODAL VIEWER
+            const modal = document.getElementById('pdf-modal');
+            const overlay = document.getElementById('pdf-modal-overlay');
+            const iframe = document.getElementById('pdf-modal-iframe');
+            const modalTitle = document.getElementById('pdf-modal-title');
+            const openButtons = document.querySelectorAll('.open-pdf-modal');
+            const closeButton = document.getElementById('pdf-modal-close');
+
+            const openModal = (pdfSrc, pdfTitle) => {
+                if (!modal || !iframe) return;
+                iframe.setAttribute('src', pdfSrc);
+                modalTitle.textContent = pdfTitle;
+                modal.classList.add('show');
+                overlay.classList.add('show');
+                document.body.classList.add('modal-open');
+            };
+
+            const closeModal = () => {
+                if (!modal || !iframe) return;
+                modal.classList.remove('show');
+                overlay.classList.remove('show');
+                document.body.classList.remove('modal-open');
+                // Important: Clear the iframe src to stop the PDF from loading in the background
+                iframe.setAttribute('src', '');
+            };
+
+            openButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const pdfSrc = button.dataset.pdfSrc;
+                    const pdfTitle = button.dataset.pdfTitle;
+                    openModal(pdfSrc, pdfTitle);
+                });
+            });
+            
+            if(closeButton) closeButton.addEventListener('click', closeModal);
+            if(overlay) overlay.addEventListener('click', closeModal);
+            
+            // Close modal on escape key press
+            document.addEventListener('keydown', (e) => {
+                if (e.key === "Escape" && modal.classList.contains('show')) {
+                    closeModal();
+                }
+            });
         });
     </script>
 </body>
