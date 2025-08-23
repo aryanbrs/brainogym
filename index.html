@@ -55,7 +55,7 @@
         }
         body.loaded { opacity: 1; }
         body.menu-open { overflow: hidden; }
-        img, svg { max-width: 100%; height: auto; display: block; }
+        img, svg, video { max-width: 100%; height: auto; display: block; }
         ul { list-style: none; }
         a { text-decoration: none; color: var(--clr-gold-medium); transition: color 0.2s; }
         a:hover { color: var(--clr-gold-deep); }
@@ -101,7 +101,7 @@
         .header-container { display: flex; justify-content: space-between; align-items: center; }
         .logo-link { display: flex; align-items: center; gap: 0.5rem; }
         .logo-img { height: 40px; }
-        .logo-text-svg { display: block; height: 20px; } /* Visible by default, adjusts size */
+        .logo-text-svg { display: block; height: 20px; }
         #menu-toggle { display: block; background: none; border: none; cursor: pointer; padding: 0.5rem; z-index: 1001; }
         #menu-toggle span { display: block; width: 25px; height: 3px; background-color: var(--clr-brown-dark); margin: 5px 0; transition: all var(--transition-smooth); border-radius: 3px; }
         #menu-toggle.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
@@ -126,19 +126,77 @@
         .hero-subtitle { font-size: 1.1rem; color: var(--clr-gold-pale); margin-bottom: 2em; }
         .hero-cta-group { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
         .btn-hero { width: 100%; max-width: 300px; padding: 1em 2em; }
-
-        /* --- Event Banner Section --- */
-        .event-announcement-card { background: var(--clr-white); border-radius: var(--border-radius-lg); box-shadow: var(--shadow-medium); padding: 2rem; border-top: 6px solid var(--clr-gold-medium); }
-        .event-title { font-size: clamp(1.8rem, 5vw, 2.5rem); margin-bottom: 0.25rem; }
-        .event-subtitle { font-size: 1.1rem; color: var(--clr-brown-medium); margin-bottom: 2rem; font-family: var(--font-body); }
-        .event-details-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; text-align: left; margin-bottom: 2rem; }
-        .detail-item { display: flex; align-items: flex-start; gap: 1rem; }
-        .detail-icon { flex-shrink: 0; width: 40px; height: 40px; border-radius: 50%; background-color: var(--clr-gold-pale); display: flex; align-items: center; justify-content: center; color: var(--clr-gold-medium); }
-        .detail-icon svg { width: 22px; height: 22px; }
-        .detail-content h4 { margin-bottom: 0.25rem; font-size: 1.1rem; color: var(--clr-brown-dark); font-weight: 700; }
-        .highlight-deadline { background-color: var(--clr-gold-pale); padding: 0.2rem 0.5rem; border-radius: 4px; font-weight: 700; color: var(--clr-gold-deep); }
-        .event-footer { margin-top: 2rem; font-style: italic; color: #777; font-size: 1rem; }
         
+        /* --- [NEW] SCANNER’25 Results Section --- */
+        .results-announcement-section {
+            background-color: var(--clr-gold-pale);
+            border-top: 1px solid var(--clr-gold-light);
+            border-bottom: 1px solid var(--clr-gold-light);
+        }
+        .results-header {
+            background: var(--clr-white);
+            border-radius: var(--border-radius-lg);
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            box-shadow: var(--shadow-medium);
+            border-top: 6px solid var(--clr-gold-medium);
+        }
+        .results-header h2 { font-size: clamp(1.8rem, 5vw, 2.5rem); margin-bottom: 0.5rem; color: var(--clr-brown-dark); }
+        .results-header .announcement-time { font-size: 1.1rem; color: var(--clr-brown-medium); font-weight: 600; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0.5rem;}
+        .results-header .announcement-time svg { flex-shrink: 0; width: 20px; height: 20px; fill: var(--clr-gold-deep); }
+        .results-header .contact-info { margin-top: 1.5rem; font-weight: 600; color: var(--clr-brown-medium); }
+        .results-content-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+        
+        /* Countdown Timer Styles */
+        #countdown-timer { display: flex; justify-content: center; gap: 0.75rem; margin: 1.5rem auto; font-family: var(--font-body); }
+        .countdown-block { background-color: var(--clr-gold-pale); padding: 0.75rem; border-radius: var(--border-radius-md); text-align: center; min-width: 70px; box-shadow: inset 0 2px 4px rgba(0,0,0,0.05); }
+        .countdown-number { display: block; font-size: clamp(1.8rem, 5vw, 2.2rem); font-weight: 700; color: var(--clr-brown-dark); line-height: 1; font-family: var(--font-heading); }
+        .countdown-label { display: block; font-size: 0.75rem; text-transform: uppercase; color: var(--clr-brown-medium); letter-spacing: 0.5px; margin-top: 0.25rem; }
+        #countdown-timer .expired-message { font-size: 1.2rem; font-weight: bold; color: var(--clr-gold-deep); }
+
+        /* Gallery Styles */
+        .gallery-container, .video-player-container {
+            background-color: var(--clr-white);
+            padding: 1.5rem;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-light);
+            text-align: left;
+        }
+        .gallery-container h3, .video-player-container h3 { margin-top: 0; text-align: center; font-size: 1.6rem; color: var(--clr-gold-deep);}
+        .slideshow-wrapper { position: relative; overflow: hidden; border-radius: var(--border-radius-md); aspect-ratio: 16 / 10; margin-bottom: 1rem; background-color: var(--clr-gold-pale);}
+        .slideshow-image { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.8s ease-in-out; cursor: pointer; }
+        .slideshow-image.active { opacity: 1; }
+        .slideshow-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 100%; display: flex; justify-content: space-between; padding: 0 1rem; pointer-events: none;}
+        .slideshow-nav-btn { background-color: rgba(255, 252, 245, 0.8); border: none; border-radius: 50%; width: 40px; height: 40px; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-light); transition: all var(--transition-smooth); pointer-events: all; }
+        .slideshow-nav-btn:hover { background-color: var(--clr-white); transform: scale(1.1); }
+        .slideshow-nav-btn svg { width: 24px; height: 24px; fill: var(--clr-brown-dark); }
+        .gallery-controls {text-align: center;}
+        .gallery-grid { display: none; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 0.5rem; margin-top: 1rem; }
+        .gallery-grid.visible { display: grid; }
+        .gallery-thumb { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: var(--border-radius-md); cursor: pointer; transition: transform var(--transition-smooth), box-shadow var(--transition-smooth); }
+        .gallery-thumb:hover { transform: scale(1.05); box-shadow: var(--shadow-medium); }
+        
+        /* Video Player Styles */
+        .video-display { position: relative; border-radius: var(--border-radius-md); overflow: hidden; background-color: #000; margin-bottom: 1rem; }
+        .video-display video { width: 100%; display: block; }
+        .video-playlist { display: flex; flex-direction: column; gap: 0.5rem; max-height: 250px; overflow-y: auto; padding-right: 5px; }
+        .video-playlist-item { display: flex; align-items: center; gap: 1rem; padding: 0.5rem; border-radius: var(--border-radius-md); cursor: pointer; transition: background-color var(--transition-smooth); border: 1px solid var(--clr-gold-pale); }
+        .video-playlist-item:hover { background-color: var(--clr-gold-pale); }
+        .video-playlist-item.active { background-color: var(--clr-gold-light); color: var(--clr-brown-dark); font-weight: bold; }
+        .video-thumb-placeholder { flex-shrink: 0; width: 80px; height: 45px; background-color: var(--clr-gold-pale); color: var(--clr-gold-deep); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-family: var(--font-heading); border-radius: 4px;}
+        .video-nav-controls { display: flex; justify-content: center; gap: 1rem; margin-top: 1rem; }
+        
+        /* Lightbox Modal Styles */
+        .lightbox-modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(49, 38, 29, 0.9); display: none; align-items: center; justify-content: center; z-index: 2000; padding: 1rem; opacity: 0; transition: opacity var(--transition-smooth);}
+        .lightbox-modal.active { display: flex; opacity: 1; }
+        .lightbox-content { position: relative; max-width: 90vw; max-height: 90vh; }
+        .lightbox-image { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: var(--border-radius-md); }
+        .lightbox-close { position: absolute; top: -35px; right: -15px; background: none; border: none; color: var(--clr-white); font-size: 2.5rem; cursor: pointer; line-height: 1; }
+        .lightbox-nav { position: absolute; top: 50%; transform: translateY(-50%); width: calc(100% + 80px); left: -40px; display: flex; justify-content: space-between; }
+        .lightbox-nav-btn { background-color: rgba(255, 252, 245, 0.8); border: none; border-radius: 50%; width: 40px; height: 40px; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-light); transition: background-color var(--transition-smooth); }
+        .lightbox-nav-btn:hover { background-color: var(--clr-white); }
+        .lightbox-nav-btn svg { width: 24px; height: 24px; fill: var(--clr-brown-dark); }
+
         /* --- Welcome & Stats Section --- */
         .key-stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 3rem; }
         .stat-item { padding: 1.5rem 0.5rem; background-color: var(--clr-white); border-radius: var(--border-radius-md); box-shadow: var(--shadow-light); transition: transform var(--transition-smooth), box-shadow var(--transition-smooth); }
@@ -179,29 +237,7 @@
         .site-footer { background-color: var(--clr-bg-footer); color: var(--clr-gold-pale); padding: 3rem 0 1.5rem; }
         .footer-grid { display: grid; grid-template-columns: 1fr; gap: 2.5rem; text-align: center; margin-bottom: 2rem; }
         .footer-column { margin-bottom: 1rem; }
-        
-        /* FIX: Simplified the filter to make the logo white for visibility on the dark background, and set a reasonable max-width. */
-       .footer-logo-img {
-            max-width: 150px; /* Set a reasonable max width for the footer */
-            height: auto; /* This maintains the image's aspect ratio */
-            margin: 0 auto 1rem;
-            /* Simplified filter: makes the logo white */
-            filter: brightness(0) invert(1);
-        }
-        /* Style for the new Exam Levels list */
-.levels-list {
-    list-style: none; /* Removes the default bullet points */
-    padding: 0;
-    margin: 0;
-    /* The parent .detail-content is likely aligned left by default, but if not, this helps */
-    text-align: left; 
-    display: inline-block; /* Helps with alignment inside the flex/grid container */
-}
-
-.levels-list li {
-    padding: 2px 0; /* Adds a little vertical spacing between list items */
-}
-
+       .footer-logo-img { max-width: 150px; height: auto; margin: 0 auto 1rem; filter: brightness(0) invert(1); }
         .footer-heading { color: var(--clr-gold-medium); font-size: 1.3rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
         .footer-links, .footer-contact-info { margin: 0; padding: 0; list-style: none; }
         .footer-links li, .footer-contact-info li { margin-bottom: 0.75em; }
@@ -226,8 +262,9 @@
         @media (min-width: 768px) {
             .content-section { padding: 5rem 0; }
             .logo-text-svg { height: 28px; }
-            .event-details-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
             .key-stats-grid { grid-template-columns: repeat(4, 1fr); }
+            #countdown-timer { gap: 1.5rem; }
+            .countdown-block { min-width: 90px; }
             .founder-content-flex { flex-direction: row; text-align: left; gap: 3rem; }
             .founder-image-wrapper { max-width: 250px; }
             .founder-quote::before { position: absolute; display: block; left: -1.5rem; top: -0.5rem; margin: 0; }
@@ -237,6 +274,9 @@
             .footer-grid { grid-template-columns: repeat(2, 1fr); text-align: left; }
             .footer-logo-img, .social-icons { margin-left: 0; justify-content: flex-start; }
             .footer-contact-info li { justify-content: flex-start; }
+            .lightbox-close { top: 5px; right: 5px; color: var(--clr-white); background-color: rgba(0,0,0,0.4); border-radius: 50%; width:30px; height:30px; font-size: 1.5rem; display:flex; align-items:center; justify-content:center; }
+            .lightbox-nav { width: 100%; left: 0; padding: 0 5px; }
+            .lightbox-nav-btn { width: 35px; height: 35px; }
         }
 
         /* --- DESKTOP STYLES (min-width: 1024px) --- */
@@ -252,6 +292,7 @@
             .hero-section { justify-content: flex-start; text-align: left; }
             .hero-content { margin-left: 0; max-width: 650px; }
             .hero-cta-group { flex-direction: row; justify-content: flex-start; }
+            .results-content-grid { grid-template-columns: 1fr 1fr; }
             .founder-image-wrapper { max-width: 300px; }
             .footer-grid { grid-template-columns: 2fr 1fr 2fr 1.5fr; }
         }
@@ -288,7 +329,6 @@
 
     <main>
         <!-- ======================= HERO SECTION ======================= -->
-        <!-- How animations work: The `data-animation` attribute tells our JS to watch this element. When it scrolls into view, the `is-visible` class is added, triggering the CSS transition. -->
         <section id="hero" class="hero-section">
             <div class="slideshow-container"></div>
             <div class="hero-overlay"></div>
@@ -305,43 +345,87 @@
             </div>
         </section>
 
-        <!-- ======================= EVENT BANNER SECTION ======================= -->
-        <section id="event-banner" class="content-section">
+        <!-- ======================= [UPDATED] SCANNER’25 RESULTS WAITING AREA ======================= -->
+        <section id="results-announcement" class="content-section results-announcement-section">
             <div class="container text-center">
-                <div class="event-announcement-card" data-animation="zoomIn">
-                    <h2 class="event-title">🏆 Announcing SCANNER'25!</h2>
-                    <p class="event-subtitle">The National Championships for Abacus, Vedic Maths, IQ & Robotics</p>
-                    <div class="event-details-grid">
-                        <div class="detail-item"><div class="detail-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"></path></svg></div><div class="detail-content"><h4>Final Deadline</h4><p>All enrollments must be submitted by <span class="highlight-deadline">29th July 2025</span>.</p></div></div>
-                        
-                        <!-- === MODIFIED SECTION START === -->
-                        <div class="detail-item">
-                            <div class="detail-icon">
-                                <!-- New "Layers" Icon for Levels -->
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.99 18.54l-7.37-5.73L3 14.07l9 7 9-7-1.63-1.27-7.38 5.74zM12 16l7.36-5.73L21 9l-9-7-9 7 1.63 1.27L12 16z"></path></svg>
-                            </div>
-                            <div class="detail-content">
-                                <h4>Exam Levels</h4>
-                                <!-- Using a list for better aesthetics and clarity -->
-                                <ul class="levels-list">
-                                    <li>6 Levels of Abacus</li>
-                                    <li>4 Levels of Vedic Maths</li>
-                                    <li>4 Levels of Robotics</li>
-                                </ul>
+                <!-- 1. Heading & Info Block -->
+                <div class="results-header" data-animation="zoomIn">
+                    <h2>SCANNER’25 Results Announcement</h2>
+                    <p class="announcement-time">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/><path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                        <!-- === DATE UPDATED HERE === -->
+                        <span>Results will be announced on <strong>24th August 2025, 9:00 PM (Sunday)</strong></span>
+                    </p>
+                    
+                    <!-- Countdown Timer HTML -->
+                    <div id="countdown-timer">
+                        <div class="countdown-block">
+                            <span class="countdown-number" id="days">00</span>
+                            <span class="countdown-label">Days</span>
+                        </div>
+                        <div class="countdown-block">
+                            <span class="countdown-number" id="hours">00</span>
+                            <span class="countdown-label">Hours</span>
+                        </div>
+                        <div class="countdown-block">
+                            <span class="countdown-number" id="minutes">00</span>
+                            <span class="countdown-label">Minutes</span>
+                        </div>
+                        <div class="countdown-block">
+                            <span class="countdown-number" id="seconds">00</span>
+                            <span class="countdown-label">Seconds</span>
+                        </div>
+                    </div>
+
+                    <a href="result.html" class="btn btn-primary">Check Your Results Here</a>
+                    <p class="contact-info">Have Questions? Contact the Helpline: <strong>7011177279</strong></p>
+                </div>
+        
+                <div class="results-content-grid">
+                    <!-- 2. Image Gallery Section -->
+                    <div class="gallery-container" data-animation="fadeInLeft" data-delay="200">
+                        <h3>Event Glimpses</h3>
+                        <div class="slideshow-wrapper" id="slideshow-wrapper">
+                            <!-- Slideshow images will be generated by JS -->
+                            <div class="slideshow-nav">
+                                <button class="slideshow-nav-btn" id="slideshow-prev" aria-label="Previous Image">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+                                </button>
+                                <button class="slideshow-nav-btn" id="slideshow-next" aria-label="Next Image">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+                                </button>
                             </div>
                         </div>
-                        <!-- === MODIFIED SECTION END === -->
-
-                        <div class="detail-item"><div class="detail-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-8.5 10.5H9V13h2.5v-1.5H9V10h2.5V8.5H9V7h4v7.5h-1.5zM18 13h-3.5v-1.5h2v-1h-2v-1h2V8h-3.5a1.5 1.5 0 0 0-1.5 1.5v4a1.5 1.5 0 0 0 1.5 1.5H18v-1.5z"></path></svg></div><div class="detail-content"><h4>Enrollment Fee</h4><p>₹550 per participant.</p></div></div>
-                        <div class="detail-item"><div class="detail-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"></path></svg></div><div class="detail-content"><h4>Have Questions?</h4><p>Contact the Helpline: <strong>7011177279</strong></p></div></div>
+                        <div class="gallery-controls">
+                            <button class="btn btn-secondary" id="show-more-gallery">Show More</button>
+                        </div>
+                        <div class="gallery-grid" id="gallery-grid">
+                            <!-- Gallery thumbnails will be generated by JS -->
+                        </div>
                     </div>
-                    <a href="contact.html?subject=SCANNER'25 Inquiry" class="btn btn-primary">Register Interest</a>
+        
+                    <!-- 3. Videos Section -->
+                    <div class="video-player-container" data-animation="fadeInRight" data-delay="400">
+                        <h3>Event Highlights</h3>
+                        <div class="video-display">
+                            <video id="main-video-player" controls preload="metadata" playsinline>
+                                <!-- Video source will be set by JS -->
+                            </video>
+                        </div>
+                        <div class="video-playlist" id="video-playlist">
+                            <!-- Playlist will be generated by JS -->
+                        </div>
+                        <div class="video-nav-controls">
+                             <button class="btn btn-secondary btn-small" id="video-prev">Previous</button>
+                             <button class="btn btn-secondary btn-small" id="video-next">Next</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- ======================= WELCOME & STATS SECTION ======================= -->
-        <section id="welcome" class="content-section bg-pale-gold">
+        <section id="welcome" class="content-section">
             <div class="container text-center">
                 <h2 class="section-title" data-animation="fadeInUp"><span class="brand-name-caps">BRAINOGYM</span> Educare</h2>
                 <p class="section-intro" data-animation="fadeInUp" data-delay="100">Pioneering child development since 2008. We empower students with essential skills for a brighter future through a blend of traditional wisdom and modern techniques.</p>
@@ -359,7 +443,7 @@
         </section>
 
         <!-- ======================= FOUNDER SPOTLIGHT SECTION ======================= -->
-        <section id="founder-spotlight" class="content-section">
+        <section id="founder-spotlight" class="content-section bg-pale-gold">
             <div class="container">
                 <div class="text-center"><h2 class="section-title" data-animation="fadeInUp">A Mother's Vision, <span class="highlight-gold">A Legacy of Learning</span></h2></div>
                 <div class="founder-content-flex">
@@ -373,7 +457,7 @@
         </section>
 
         <!-- ======================= CORE PROGRAMS SECTION ======================= -->
-        <section id="core-programs" class="content-section bg-pale-gold">
+        <section id="core-programs" class="content-section">
             <div class="container text-center">
                 <h2 class="section-title" data-animation="fadeInUp">Discover Our <span class="highlight-gold">Transformative Programs</span></h2>
                 <p class="section-intro" data-animation="fadeInUp" data-delay="100">Each program is designed to build confidence, enhance cognitive abilities, and foster a lifelong love for learning.</p>
@@ -390,7 +474,7 @@
         </section>
         
         <!-- ======================= CHANNEL LINK SECTION ======================= -->
-        <section class="content-section channel-link-section">
+        <section class="content-section channel-link-section bg-pale-gold">
             <div class="container text-center">
                 <h2 class="section-title" data-animation="fadeInUp">See <span class="highlight-gold"><span class="brand-name-caps">BRAINOGYM</span> in Action!</span></h2>
                 <p class="section-intro" data-animation="fadeInUp" data-delay="100">Watch stories of transformation, student achievements, and event highlights on our official YouTube channel.</p>
@@ -401,7 +485,7 @@
         </section>
 
         <!-- ======================= WHY CHOOSE US SECTION ======================= -->
-        <section id="why-choose-us" class="content-section bg-pale-gold">
+        <section id="why-choose-us" class="content-section">
             <div class="container text-center">
                 <h2 class="section-title" data-animation="fadeInUp">Why Parents & Students <span class="highlight-gold">Choose Us</span></h2>
                 <div class="reasons-list-wrapper">
@@ -468,6 +552,22 @@
         </div>
     </footer>
 
+    <!-- Lightbox Modal HTML -->
+    <div class="lightbox-modal" id="lightbox-modal">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+            <img src="" alt="Enlarged gallery image" class="lightbox-image" id="lightbox-image">
+            <div class="lightbox-nav">
+                <button class="lightbox-nav-btn" id="lightbox-prev" aria-label="Previous Image">
+                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+                </button>
+                <button class="lightbox-nav-btn" id="lightbox-next" aria-label="Next Image">
+                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- ================================================
          ALL JAVASCRIPT IS EMBEDDED HERE
          ================================================ -->
@@ -500,68 +600,66 @@
                 });
             }
 
-            // --- 3. DYNAMIC FEATURES: SLIDESHOW & STATS COUNTER ---
-                const slideshowContainer = document.querySelector(".slideshow-container");
-if (slideshowContainer) {
-    // --- MODIFIED SECTION ---
-    const images = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg"];
-    const imagePath = "images/banner/";
-    // --- END MODIFIED SECTION ---
+            // --- 3. DYNAMIC FEATURES: HERO SLIDESHOW & STATS COUNTER ---
+            const heroSlideshowContainer = document.querySelector(".slideshow-container");
+            if (heroSlideshowContainer) {
+                const images = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg"];
+                const imagePath = "images/banner/";
+                let currentSlideIndex = 0;
 
-    let currentSlideIndex = 0;
+                images.forEach((imgFile, index) => {
+                    const slideDiv = document.createElement("div");
+                    slideDiv.className = "slide";
+                    slideDiv.style.backgroundImage = `url(${imagePath}${imgFile})`;
+                    if (index === 0) {
+                        slideDiv.classList.add("active");
+                        const preloadLink = document.createElement('link');
+                        preloadLink.rel = 'preload';
+                        preloadLink.as = 'image';
+                        preloadLink.href = `${imagePath}${imgFile}`;
+                        document.head.appendChild(preloadLink);
+                    }
+                    heroSlideshowContainer.appendChild(slideDiv);
+                });
 
-    images.forEach((imgFile, index) => {
-        const slideDiv = document.createElement("div");
-        slideDiv.className = "slide";
-        slideDiv.style.backgroundImage = `url(${imagePath}${imgFile})`;
-        if (index === 0) {
-            slideDiv.classList.add("active");
-            const preloadLink = document.createElement('link');
-            preloadLink.rel = 'preload';
-            preloadLink.as = 'image';
-            preloadLink.href = `${imagePath}${imgFile}`;
-            document.head.appendChild(preloadLink);
-        }
-        slideshowContainer.appendChild(slideDiv);
-    });
-
-    const slides = slideshowContainer.children;
-    if (slides.length > 1) {
-        setInterval(() => {
-            slides[currentSlideIndex].classList.remove("active");
-            currentSlideIndex = (currentSlideIndex + 1) % slides.length;
-            slides[currentSlideIndex].classList.add("active");
-        }, 4500);
-    }
-}
-
-const statNumbers = document.querySelectorAll(".stat-number");
-if (statNumbers.length > 0) {
-    const animateValue = (obj, start, end, duration) => {
-        let startTimestamp = null;
-        const step = (timestamp) => {
-            if (!startTimestamp) startTimestamp = timestamp;
-            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-            obj.textContent = Math.floor(progress * (end - start) + start).toLocaleString();
-            if (progress < 1) { window.requestAnimationFrame(step); }
-        };
-        window.requestAnimationFrame(step);
-    };
-
-    const statObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const el = entry.target;
-                if (!el.dataset.animated) {
-                    const countTo = parseInt(el.dataset.count, 10);
-                    animateValue(el, 0, countTo, 2000);
-                    el.dataset.animated = 'true';
+                const slides = heroSlideshowContainer.children;
+                if (slides.length > 1) {
+                    setInterval(() => {
+                        slides[currentSlideIndex].classList.remove("active");
+                        currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+                        slides[currentSlideIndex].classList.add("active");
+                    }, 4500);
                 }
             }
-        });
-    }, { threshold: 0.5 });
-    statNumbers.forEach(stat => statObserver.observe(stat));
-}
+
+            const statNumbers = document.querySelectorAll(".stat-number");
+            if (statNumbers.length > 0) {
+                const animateValue = (obj, start, end, duration) => {
+                    let startTimestamp = null;
+                    const step = (timestamp) => {
+                        if (!startTimestamp) startTimestamp = timestamp;
+                        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                        obj.textContent = Math.floor(progress * (end - start) + start).toLocaleString();
+                        if (progress < 1) { window.requestAnimationFrame(step); }
+                    };
+                    window.requestAnimationFrame(step);
+                };
+
+                const statObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const el = entry.target;
+                            if (!el.dataset.animated) {
+                                const countTo = parseInt(el.dataset.count, 10);
+                                animateValue(el, 0, countTo, 2000);
+                                el.dataset.animated = 'true';
+                            }
+                        }
+                    });
+                }, { threshold: 0.5 });
+                statNumbers.forEach(stat => statObserver.observe(stat));
+            }
+
             // --- 4. UI ENHANCEMENTS: SCROLL ANIMATIONS & ACTIVE NAV ---
             const animatedElements = document.querySelectorAll("[data-animation]");
             if (animatedElements.length > 0) {
@@ -593,6 +691,179 @@ if (statNumbers.length > 0) {
             const yearSpan = document.getElementById("current-year");
             if (yearSpan) {
                 yearSpan.textContent = new Date().getFullYear();
+            }
+
+            // --- 6. [UPDATED] SCANNER'25 RESULTS SECTION LOGIC ---
+            const resultsSection = document.getElementById("results-announcement");
+            if (resultsSection) {
+                // --- Countdown Timer Logic ---
+                const countdownContainer = document.getElementById('countdown-timer');
+                if (countdownContainer) {
+                    // === DATE UPDATED HERE ===
+                    const countDownDate = new Date("Aug 24, 2025 21:00:00").getTime();
+                    const daysEl = document.getElementById("days");
+                    const hoursEl = document.getElementById("hours");
+                    const minutesEl = document.getElementById("minutes");
+                    const secondsEl = document.getElementById("seconds");
+
+                    const padZero = (num) => num < 10 ? '0' + num : num;
+
+                    const interval = setInterval(() => {
+                        const now = new Date().getTime();
+                        const distance = countDownDate - now;
+
+                        if (distance < 0) {
+                            clearInterval(interval);
+                            countdownContainer.innerHTML = `<span class="expired-message">Results are being announced!</span>`;
+                            return;
+                        }
+
+                        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                        
+                        daysEl.textContent = padZero(days);
+                        hoursEl.textContent = padZero(hours);
+                        minutesEl.textContent = padZero(minutes);
+                        secondsEl.textContent = padZero(seconds);
+
+                    }, 1000);
+                }
+
+                // --- Gallery Logic ---
+                const slideshowWrapper = document.getElementById('slideshow-wrapper');
+                const galleryGrid = document.getElementById('gallery-grid');
+                const showMoreBtn = document.getElementById('show-more-gallery');
+                const slideshowNextBtn = document.getElementById('slideshow-next');
+                const slideshowPrevBtn = document.getElementById('slideshow-prev');
+                
+                const lightboxModal = document.getElementById('lightbox-modal');
+                const lightboxImage = document.getElementById('lightbox-image');
+                const lightboxCloseBtn = document.getElementById('lightbox-close');
+                const lightboxNextBtn = document.getElementById('lightbox-next');
+                const lightboxPrevBtn = document.getElementById('lightbox-prev');
+
+                const TOTAL_IMAGES = 23;
+                const IMAGE_PATH = 'images/scannerresults/';
+                let currentImageIndex = 0;
+                let slideshowInterval;
+
+                const galleryImages = Array.from({ length: TOTAL_IMAGES }, (_, i) => `${IMAGE_PATH}${i + 1}.jpg`);
+
+                function createGalleryElements() {
+                    galleryImages.forEach((src, index) => {
+                        const slideImg = document.createElement('img');
+                        slideImg.src = src;
+                        slideImg.alt = `SCANNER'25 Event Image ${index + 1}`;
+                        slideImg.className = 'slideshow-image';
+                        slideImg.dataset.index = index;
+                        if (index === 0) slideImg.classList.add('active');
+                        slideshowWrapper.prepend(slideImg);
+
+                        const gridImg = document.createElement('img');
+                        gridImg.src = src;
+                        gridImg.alt = `SCANNER'25 Event Thumbnail ${index + 1}`;
+                        gridImg.className = 'gallery-thumb';
+                        gridImg.dataset.index = index;
+                        galleryGrid.appendChild(gridImg);
+                    });
+                }
+
+                function showImage(index) {
+                    currentImageIndex = (index + TOTAL_IMAGES) % TOTAL_IMAGES;
+                    slideshowWrapper.querySelectorAll('.slideshow-image').forEach((img, i) => {
+                        img.classList.toggle('active', i === currentImageIndex);
+                    });
+                    if (lightboxModal.classList.contains('active')) {
+                        lightboxImage.src = galleryImages[currentImageIndex];
+                    }
+                }
+                
+                function startSlideshow() {
+                    stopSlideshow();
+                    slideshowInterval = setInterval(() => { showImage(currentImageIndex + 1); }, 3000);
+                }
+                
+                function stopSlideshow() { clearInterval(slideshowInterval); }
+
+                function openLightbox(index) {
+                    stopSlideshow();
+                    showImage(index);
+                    lightboxModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+                
+                function closeLightbox() {
+                    lightboxModal.classList.remove('active');
+                    document.body.style.overflow = '';
+                    startSlideshow();
+                }
+
+                slideshowNextBtn.addEventListener('click', () => { stopSlideshow(); showImage(currentImageIndex + 1); startSlideshow(); });
+                slideshowPrevBtn.addEventListener('click', () => { stopSlideshow(); showImage(currentImageIndex - 1); startSlideshow(); });
+                
+                showMoreBtn.addEventListener('click', () => {
+                    galleryGrid.classList.toggle('visible');
+                    showMoreBtn.textContent = galleryGrid.classList.contains('visible') ? 'Show Less' : 'Show More';
+                });
+
+                lightboxNextBtn.addEventListener('click', () => showImage(currentImageIndex + 1));
+                lightboxPrevBtn.addEventListener('click', () => showImage(currentImageIndex - 1));
+                lightboxCloseBtn.addEventListener('click', closeLightbox);
+                lightboxModal.addEventListener('click', (e) => { if (e.target === lightboxModal) closeLightbox(); });
+                
+                document.addEventListener('click', function(e) {
+                    if (e.target && (e.target.classList.contains('slideshow-image') || e.target.classList.contains('gallery-thumb'))) {
+                        openLightbox(parseInt(e.target.dataset.index, 10));
+                    }
+                });
+
+                // --- Video Player Logic ---
+                const videoPlayer = document.getElementById('main-video-player');
+                const playlistContainer = document.getElementById('video-playlist');
+                const videoNextBtn = document.getElementById('video-next');
+                const videoPrevBtn = document.getElementById('video-prev');
+
+                const TOTAL_VIDEOS = 4;
+                const VIDEO_PATH = 'images/videos/';
+                const videoData = [
+                    { file: '1.mp4', title: "SCANNER'25 Highlights Reel" },
+                    { file: '2.mp4', title: 'Robotics Competition Moments' },
+                    { file: '3.mp4', title: 'Vedic Maths Speed Challenge' },
+                    { file: '4.mp4', title: 'Abacus Champions Ceremony' }
+                ];
+                let currentVideoIndex = 0;
+
+                function createPlaylist() {
+                    videoData.forEach((video, index) => {
+                        const item = document.createElement('div');
+                        item.className = 'video-playlist-item';
+                        item.dataset.index = index;
+                        item.innerHTML = `<span class="video-thumb-placeholder">${index + 1}</span><span class="video-title">${video.title}</span>`;
+                        item.addEventListener('click', () => loadVideo(index));
+                        playlistContainer.appendChild(item);
+                    });
+                }
+
+                function loadVideo(index, autoPlay = true) {
+                    currentVideoIndex = (index + TOTAL_VIDEOS) % TOTAL_VIDEOS;
+                    videoPlayer.src = `${VIDEO_PATH}${videoData[currentVideoIndex].file}`;
+                    videoPlayer.load();
+                    if(autoPlay) videoPlayer.play();
+                    playlistContainer.querySelectorAll('.video-playlist-item').forEach((item, i) => {
+                        item.classList.toggle('active', i === currentVideoIndex);
+                    });
+                }
+                
+                videoNextBtn.addEventListener('click', () => loadVideo(currentVideoIndex + 1));
+                videoPrevBtn.addEventListener('click', () => loadVideo(currentVideoIndex - 1));
+                
+                // Initialize section
+                createGalleryElements();
+                startSlideshow();
+                createPlaylist();
+                loadVideo(0, false); // Load first video without autoplaying
             }
         });
     </script>
