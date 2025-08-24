@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2Y7MPVMWC6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2Y7MPVMWC6');
+</script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BRAINOGYM - Building a path for your bright future</title>
@@ -8,7 +17,7 @@
 
     <!-- Google Fonts for the "Golden Theme" -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
 
     <!-- ================================================
@@ -354,7 +363,7 @@
                     <p class="announcement-time">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/><path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
                         <!-- === DATE UPDATED HERE === -->
-                        <span>Results will be announced on <strong>24 - 08 - 2025 sunday 7 p.m.</strong></span>
+                        <span>Results will be announced on <strong>24 - 08 - 2025 sunday 5 p.m.</strong></span>
                     </p>
                     
                     <!-- Countdown Timer HTML -->
@@ -699,7 +708,7 @@
                 const countdownContainer = document.getElementById('countdown-timer');
                 if (countdownContainer) {
                     // === DATE UPDATED HERE ===
-                    const countDownDate = new Date("Aug 24, 2025 19:00:00").getTime();
+                    const countDownDate = new Date("Aug 24, 2025 17:00:00").getTime();
                     const daysEl = document.getElementById("days");
                     const hoursEl = document.getElementById("hours");
                     const minutesEl = document.getElementById("minutes");
@@ -713,8 +722,29 @@
 
                         if (distance < 0) {
                             clearInterval(interval);
-                            countdownContainer.innerHTML = `<span class="expired-message">Results are being announced!</span>`;
-                            return;
+                            
+                            // Select all elements to modify
+                            const resultsHeader = document.querySelector('.results-header');
+                            const heading = resultsHeader.querySelector('h2');
+                            const announcementTime = resultsHeader.querySelector('.announcement-time');
+                            const countdownTimer = document.getElementById('countdown-timer');
+                            const resultsGrid = document.querySelector('.results-content-grid');
+                            const resultButton = resultsHeader.querySelector('a.btn-primary');
+
+                            // Update content and hide elements
+                            if (heading) heading.textContent = 'Results Are Now Live!';
+                            if (announcementTime) announcementTime.style.display = 'none';
+                            if (countdownTimer) countdownTimer.style.display = 'none';
+                            if (resultsGrid) resultsGrid.style.display = 'none';
+                            
+                            // Style the button to make it more prominent
+                            if (resultButton) {
+                                resultButton.style.marginTop = '1.5rem';
+                                resultButton.style.transform = 'scale(1.1)';
+                                resultButton.style.fontSize = '1.1rem';
+                            }
+                            
+                            return; // Stop the function execution
                         }
 
                         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
