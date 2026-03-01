@@ -1,0 +1,15 @@
+{
+  "name": "BrainoGym Educare",
+  "short_name": "BrainoGym",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f4ea",
+  "theme_color": "#bf8f32",
+  "icons": [
+    {
+      "src": "/logos/brainogym-favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ]
+}

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2Y7MPVMWC6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2Y7MPVMWC6');
+</script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vedic Maths Guru Program - BRAINOGYM Educare</title>
+    <link rel="icon" href="logos/brainogym-favicon.ico" type="image/x-icon" />
+
+    <!-- Google Fonts for the "Golden Theme" -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
+
+    <!-- ================================================
+         ALL CSS IS EMBEDDED HERE
+         ================================================ -->
+    <style>
+        /* BRAINOGYM - MOBILE FIRST REDESIGN STYLESHEET (COURSES PAGE) */
+
+        /* 1. ROOT VARIABLES & GLOBAL RESETS - IDENTICAL TO OTHER PAGES */
+        :root {
+            --clr-gold-deep: #b08d57;
+            --clr-gold-medium: #d4af37;
+            --clr-gold-light: #e0c78a;
+            --clr-gold-pale: #f5eedc;
+            --clr-gold-highlight: #fff8dc;
+            --clr-brown-dark: #4a3b31;
+            --clr-brown-medium: #795548;
+            --clr-bg-main: #fffcf5;
+            --clr-bg-footer: #31261d;
+            --clr-white: #ffffff;
+            --font-heading: "Playfair Display", serif;
+            --font-body: "Nunito Sans", sans-serif;
+            --shadow-light: 0 4px 15px rgba(176, 141, 87, 0.1);
+            --shadow-medium: 0 6px 20px rgba(176, 141, 87, 0.15);
+            --border-radius-md: 8px;
+            --border-radius-lg: 12px;
+            --transition-smooth: 0.3s ease-in-out;
+            --container-width: 1140px;
+            --gutter: 1rem;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { font-size: 16px; scroll-behavior: smooth; }
+        body { font-family: var(--font-body); color: var(--clr-brown-dark); background-color: var(--clr-bg-main); line-height: 1.7; overflow-x: hidden; opacity: 0; transition: opacity 0.5s ease-in-out; }
+        body.loaded { opacity: 1; }
+        body.menu-open, body.modal-open { overflow: hidden; } /* Updated */
+        img, svg { max-width: 100%; height: auto; display: block; }
+        ul { list-style: none; }
+        a { text-decoration: none; color: var(--clr-gold-medium); transition: color 0.2s; }
+        a:hover { color: var(--clr-gold-deep); }
+        h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--clr-brown-dark); line-height: 1.2; margin-bottom: 0.75em; font-weight: 700; }
+        h1 { font-size: clamp(2.2rem, 7vw, 3rem); }
+        h2 { font-size: clamp(2rem, 6vw, 2.8rem); }
+        h3 { font-size: clamp(1.5rem, 5vw, 2.2rem); }
+        p { margin-bottom: 1em; font-size: 1rem; color: var(--clr-brown-medium); }
+        .highlight-gold { color: var(--clr-gold-medium); font-style: italic; }
+        .brand-name-caps { text-transform: uppercase; }
+
+        /* 2. LAYOUT & REUSABLE COMPONENTS - IDENTICAL TO OTHER PAGES */
+        .container { width: 90%; max-width: var(--container-width); margin: 0 auto; }
+        .text-center { text-align: center; }
+        .content-section { padding: 4rem 0; }
+        .content-section.bg-pale-gold { background-color: var(--clr-gold-pale); }
+        .bg-gold-gradient { background: linear-gradient(135deg, var(--clr-gold-medium), var(--clr-gold-deep)); color: var(--clr-white); }
+        .bg-gold-gradient h1, .bg-gold-gradient h2, .bg-gold-gradient p { color: var(--clr-white); }
+        .section-title, .section-title-light { margin-bottom: 1em; position: relative; display: inline-block; }
+        .section-title::after, .section-title-light::after { content: ""; display: block; width: 60px; height: 3px; background-color: var(--clr-gold-medium); margin: 0.5em auto 0; }
+        .section-title-light::after { background-color: var(--clr-gold-pale); }
+        .section-intro, .section-intro-light { font-size: 1.1rem; max-width: 700px; margin: -0.5em auto 2.5em auto; }
+        .section-intro-light { color: var(--clr-gold-pale); }
+        .btn { display: inline-block; padding: 0.8em 1.8em; font-family: var(--font-body); font-weight: 700; font-size: 0.95rem; text-align: center; border-radius: var(--border-radius-md); transition: all var(--transition-smooth); cursor: pointer; border: 2px solid transparent; text-transform: uppercase; letter-spacing: 0.5px; }
+        .btn-primary { background-color: var(--clr-gold-medium); color: var(--clr-white); border-color: var(--clr-gold-medium); }
+        .btn-primary:hover { background-color: var(--clr-gold-deep); border-color: var(--clr-gold-deep); transform: translateY(-2px); box-shadow: var(--shadow-medium); }
+        .btn-secondary { background-color: transparent; color: var(--clr-brown-dark); border-color: var(--clr-brown-dark); }
+        .btn-secondary:hover { background-color: var(--clr-brown-dark); color: var(--clr-white); }
+        .btn-light { background-color: var(--clr-gold-pale); color: var(--clr-brown-dark); border: 2px solid var(--clr-gold-pale); }
+        .btn-light:hover { background-color: var(--clr-gold-light); border-color: var(--clr-gold-light); }
+        .btn-light-outline { background: transparent; color: var(--clr-gold-pale); border: 2px solid var(--clr-gold-pale); }
+        .btn-light-outline:hover { background-color: var(--clr-gold-pale); color: var(--clr-brown-dark); }
+        
+        /* 3. HEADER & NAVIGATION - IDENTICAL TO OTHER PAGES */
+        #main-header { background-color: rgba(255, 252, 245, 0.9); backdrop-filter: blur(10px); padding: 0.75rem 0; position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: background-color var(--transition-smooth), box-shadow var(--transition-smooth); }
+        #main-header.scrolled { background-color: rgba(245, 238, 220, 0.95); box-shadow: var(--shadow-light); }
+        .header-container { display: flex; justify-content: space-between; align-items: center; }
+        .logo-link { display: flex; align-items: center; gap: 0.5rem; }
+        .logo-img { height: 40px; }
+        .logo-text-svg { display: block; height: 20px; }
+        #menu-toggle { display: block; background: none; border: none; cursor: pointer; padding: 0.5rem; z-index: 1001; }
+        #menu-toggle span { display: block; width: 25px; height: 3px; background-color: var(--clr-brown-dark); margin: 5px 0; transition: all var(--transition-smooth); border-radius: 3px; }
+        #menu-toggle.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+        #menu-toggle.active span:nth-child(2) { opacity: 0; }
+        #menu-toggle.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+        #main-nav { display: flex; flex-direction: column; align-items: center; justify-content: center; position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background-color: rgba(255, 252, 245, 0.98); backdrop-filter: blur(5px); transform: translateX(100%); transition: transform 0.5s ease-in-out; padding: 6rem 1rem; }
+        #main-nav.active { transform: translateX(0); }
+        #main-nav-links { list-style: none; padding: 0; margin: 0; flex-direction: column; gap: 1rem; width: 100%; text-align: center; }
+        #main-nav-links li a { font-size: 1.5rem; padding: 0.8em 1em; color: var(--clr-brown-dark); font-weight: 600; }
+        #main-nav-links li a.active-nav { color: var(--clr-gold-deep); }
+        .btn-nav-enquire { margin-left: 0; margin-top: 2rem; font-size: 1.2rem; }
+        
+        /* 4. PAGE-SPECIFIC STYLES (COURSE DETAIL PAGES) */
+        .page-hero { padding: 10rem 0 4rem 0; background-color: var(--clr-gold-pale); text-align: center; }
+        .downloads-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+        .download-card { background: var(--clr-white); padding: 2rem; border-radius: var(--border-radius-lg); box-shadow: var(--shadow-light); transition: all var(--transition-smooth); text-align: center; }
+        .download-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-medium); }
+        .download-card h3 { color: var(--clr-gold-deep); }
+        .download-card-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 1.5rem; }
+        
+        /* 4A. PDF MODAL STYLES (NEW) */
+        .pdf-modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(49, 38, 29, 0.8); z-index: 2000; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease; }
+        .pdf-modal { position: fixed; top: 50%; left: 50%; width: 90%; height: 90vh; max-width: 900px; background-color: var(--clr-white); z-index: 2001; border-radius: var(--border-radius-lg); box-shadow: 0 10px 30px rgba(0,0,0,0.2); transform: translate(-50%, -50%) scale(0.9); opacity: 0; visibility: hidden; transition: all 0.3s ease; display: flex; flex-direction: column; }
+        .pdf-modal-overlay.show { opacity: 1; visibility: visible; }
+        .pdf-modal.show { transform: translate(-50%, -50%) scale(1); opacity: 1; visibility: visible; }
+        .pdf-modal-header { display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1.5rem; border-bottom: 1px solid var(--clr-gold-pale); }
+        .pdf-modal-title { font-family: var(--font-body); font-size: 1.1rem; color: var(--clr-brown-dark); margin: 0; }
+        .pdf-modal-close { background: none; border: none; font-size: 2rem; line-height: 1; cursor: pointer; color: var(--clr-brown-medium); padding: 0.25rem; transition: color var(--transition-smooth); }
+        .pdf-modal-close:hover { color: var(--clr-brown-dark); }
+        .pdf-modal-body { flex-grow: 1; padding: 0; overflow: hidden; }
+        .pdf-modal-iframe { width: 100%; height: 100%; border: none; }
+
+        /* Final CTA & Footer - IDENTICAL TO OTHER PAGES */
+        .cta-buttons-final { display: flex; flex-direction: column; align-items: center; gap: 1rem; margin-top: 2rem; }
+        .site-footer { background-color: var(--clr-bg-footer); color: var(--clr-gold-pale); padding: 3rem 0 1.5rem; }
+        .footer-grid { display: grid; grid-template-columns: 1fr; gap: 2.5rem; text-align: center; margin-bottom: 2rem; }
+        .footer-column { margin-bottom: 1rem; }
+        .footer-logo-img { max-width: 150px; margin: 0 auto 1rem; filter: brightness(0) invert(1) sepia(0.5) saturate(5) hue-rotate(10deg); }
+        .footer-heading { color: var(--clr-gold-medium); font-size: 1.3rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+        .footer-links, .footer-contact-info { margin: 0; padding: 0; list-style: none; }
+        .footer-links li, .footer-contact-info li { margin-bottom: 0.75em; }
+        .footer-contact-info li { display: flex; align-items: flex-start; gap: 0.75rem; justify-content: center; text-align: left; }
+        .footer-icon { fill: var(--clr-gold-medium); flex-shrink: 0; width: 18px; height: 18px; margin-top: 0.2em; }
+        .footer-column p, .footer-column li, .footer-column a { color: var(--clr-gold-light); font-size: 0.95rem; }
+        .footer-column a:hover { color: var(--clr-gold-highlight); }
+        .social-icons { display: flex; gap: 1rem; justify-content: center; margin-top: 1rem; }
+        .social-svg-icon { width: 28px; height: 28px; fill: var(--clr-gold-light); transition: fill var(--transition-smooth), transform var(--transition-smooth); }
+        .social-icons a:hover .social-svg-icon { fill: var(--clr-gold-highlight); transform: scale(1.1); }
+        .copyright { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(224, 199, 138, 0.2); font-size: 0.9rem; }
+
+        /* 5. ANIMATIONS & MEDIA QUERIES */
+        [data-animation] { opacity: 0; transition: opacity 0.8s ease, transform 0.8s ease; }
+        [data-animation="fadeInUp"] { transform: translateY(40px); }
+        [data-animation="zoomIn"] { transform: scale(0.9); }
+        [data-animation="fadeInLeft"] { transform: translateX(-40px); }
+        [data-animation="fadeInRight"] { transform: translateX(40px); }
+        .is-visible[data-animation] { opacity: 1; transform: translate(0, 0) scale(1); }
+
+        /* --- TABLET STYLES (min-width: 768px) --- */
+        @media (min-width: 768px) {
+            .content-section { padding: 5rem 0; }
+            .logo-text-svg { height: 28px; }
+            .downloads-grid { grid-template-columns: 1fr 1fr; }
+            .cta-buttons-final { flex-direction: row; justify-content: center; }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); text-align: left; }
+            .footer-logo-img, .social-icons { margin-left: 0; justify-content: flex-start; }
+            .footer-contact-info li { justify-content: flex-start; }
+        }
+
+        /* --- DESKTOP STYLES (min-width: 1024px) --- */
+        @media (min-width: 1024px) {
+            h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); }
+            #menu-toggle { display: none; }
+            .downloads-grid { grid-template-columns: repeat(3, 1fr); } /* Changed to 3 columns */
+            #main-nav { display: flex; position: static; transform: none; flex-direction: row; align-items: center; width: auto; height: auto; padding: 0; background-color: transparent; backdrop-filter: none; }
+            #main-nav-links { flex-direction: row; gap: 1.5rem; width: auto; }
+            #main-nav-links li a { font-size: 0.95rem; padding: 0.5em 0; position: relative; }
+            #main-nav-links li a::after { content: ""; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 0; height: 2px; background-color: var(--clr-gold-medium); transition: width var(--transition-smooth); }
+            #main-nav-links li a:hover::after, #main-nav-links li a.active-nav::after { width: 100%; }
+            .btn-nav-enquire { margin-top: 0; margin-left: 1.5rem; font-size: 0.9rem; }
+            .footer-grid { grid-template-columns: 2fr 1fr 2fr 1.5fr; }
+        }
+    </style>
+</head>
+<body class="loading">
+
+    <!-- ======================= HEADER ======================= -->
+    <header id="main-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo-link">
+                <img src="logos/brainogym-logo-primary.png" alt="BRAINOGYM Educare Logo" class="logo-img" />
+                <svg class="logo-text-svg" viewBox="0 0 420 40" xmlns="http://www.w3.org/2000/svg">
+                    <text x="0" y="30" font-family="var(--font-heading)" font-size="30" font-weight="bold" fill="var(--clr-brown-dark)">
+                        <tspan class="brand-name-caps">BRAINOGYM</tspan> Educare
+                    </text>
+                </svg>
+            </a>
+            <nav id="main-nav">
+                <ul id="main-nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="courses.html" class="active-nav">Courses</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary btn-small btn-nav-enquire">Enquire Now</a>
+            </nav>
+            <button id="menu-toggle" aria-label="Open Menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- ======================= PAGE HERO ======================= -->
+        <section class="page-hero bg-pale-gold">
+            <div class="container" data-animation="fadeInUp">
+                <h1>Vedic Maths Guru Program</h1>
+                <p class="section-intro">Unlocking the Secrets of Ancient High-Speed Mental Calculation.</p>
+            </div>
+        </section>
+
+        <!-- ======================= DOWNLOADABLE RESOURCES ======================= -->
+        <section class="content-section">
+            <div class="container" data-animation="fadeInUp">
+                <h2 class="section-title text-center">Vedic Maths: Sample Papers</h2>
+                <p class="section-intro text-center">Explore the power of Vedic Maths with these sample papers. Click to view online or download for later.</p>
+                
+                <div class="downloads-grid">
+                    
+                    <!-- START: Download Card 1 -->
+                    <div class="download-card" data-animation="fadeInLeft" data-delay="100">
+                        <h3>Vedic Maths - Fresher</h3>
+                        <p>An introduction to foundational concepts and simple sutras for beginners.</p>
+                        <div class="download-card-buttons">
+                           <a href="downloads/vedic-maths-level-fresher.pdf" class="btn btn-primary" download>Download PDF</a>
+                           <button class="btn btn-secondary open-pdf-modal" data-pdf-src="downloads/vedic-maths-level-fresher.pdf" data-pdf-title="Vedic Maths - Fresher">View Online</button>
+                        </div>
+                    </div>
+                    <!-- END: Download Card 1 -->
+                    
+                    <!-- START: Download Card 2 -->
+                    <div class="download-card" data-animation="fadeInUp" data-delay="200">
+                        <h3>Vedic Maths - Level 1</h3>
+                        <p>Practice sheets covering key multiplication and division techniques.</p>
+                        <div class="download-card-buttons">
+                           <a href="downloads/vedic-maths-level-1.pdf" class="btn btn-primary" download>Download PDF</a>
+                           <button class="btn btn-secondary open-pdf-modal" data-pdf-src="downloads/vedic-maths-level-1.pdf" data-pdf-title="Vedic Maths - Level 1">View Online</button>
+                        </div>
+                    </div>
+                    <!-- END: Download Card 2 -->
+                    
+                    <!-- START: Download Card 3 -->
+                    <div class="download-card" data-animation="fadeInRight" data-delay="300">
+                        <h3>Vedic Maths - Level 2</h3>
+                        <p>Advanced problems including squares, cubes, and complex calculations.</p>
+                        <div class="download-card-buttons">
+                           <a href="downloads/vedic-maths-level-2.pdf" class="btn btn-primary" download>Download PDF</a>
+                           <button class="btn btn-secondary open-pdf-modal" data-pdf-src="downloads/vedic-maths-level-2.pdf" data-pdf-title="Vedic Maths - Level 2">View Online</button>
+                        </div>
+                    </div>
+                    <!-- END: Download Card 3 -->
+
+                </div>
+            </div>
+        </section>
+        
+        <!-- ======================= FINAL CTA SECTION ======================= -->
+        <section id="final-cta" class="content-section bg-gold-gradient">
+            <div class="container text-center">
+                <h2 class="section-title-light" data-animation="fadeInUp">Have Questions? <span class="highlight-gold">Get in Touch!</span></h2>
+                <p class="section-intro-light" data-animation="fadeInUp" data-delay="100">If you need help or want to know more about our full programs, contact us today for a personalized consultation.</p>
+                <div class="cta-buttons-final" data-animation="fadeInUp" data-delay="200">
+                    <a href="contact.html" class="btn btn-light">Get a Consultation</a>
+                    <a href="tel:09015313290" class="btn btn-light-outline">Call Us Now</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ======================= PDF MODAL (NEW) ======================= -->
+    <div class="pdf-modal-overlay" id="pdf-modal-overlay"></div>
+    <div class="pdf-modal" id="pdf-modal">
+        <div class="pdf-modal-header">
+            <h4 class="pdf-modal-title" id="pdf-modal-title">PDF Document</h4>
+            <button class="pdf-modal-close" id="pdf-modal-close" aria-label="Close PDF viewer">×</button>
+        </div>
+        <div class="pdf-modal-body">
+            <iframe class="pdf-modal-iframe" id="pdf-modal-iframe" frameborder="0" title="PDF Viewer"></iframe>
+        </div>
+    </div>
+
+    <!-- ======================= FOOTER ======================= -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column about-BRAINOGYM"><img src="logos/brainogym-logo-primary.png" alt="BRAINOGYM Logo" class="footer-logo-img"/><p>Nurturing Young Minds Since 2008.</p></div>
+                <div class="footer-column quick-links"><h4 class="footer-heading">Quick Links</h4><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="courses.html">Courses</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+                <div class="footer-column contact-info"><h4 class="footer-heading">Contact Info</h4><ul class="footer-contact-info"><li><svg class="footer-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg><span>S - 200, Shakarpur, Delhi - 110092.</span></li><li><svg class="footer-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg><a href="tel:09015313290">7011177279</a></li><li><svg class="footer-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg><a href="mailto:brainogym@gmail.com">brainogym@gmail.com</a></li></ul></div>
+                <div class="footer-column follow-us"><h4 class="footer-heading">Follow Us</h4><div class="social-icons"><a href="https://www.facebook.com/share/1PSVRKQ8tw/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg class="social-svg-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-1.7c-.85 0-1.03.4-1.03.97V12h2.8l-.4 3H13v6.95c5.05-.5 9-4.76 9-9.95z"/></svg></a><a href="https://www.instagram.com/BRAINOGYMeducare?igsh=MXN4ZTYxcXRyc3Fhbg==" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg class="social-svg-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg></a><a href="https://youtube.com/@BRAINOGYMeducare?feature=shared" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg class="social-svg-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M21.58 7.19c-.23-.86-.9-1.52-1.76-1.76C18.25 5 12 5 12 5s-6.25 0-7.82.43c-.86.23-1.52.9-1.76 1.76C2 8.75 2 12 2 12s0 3.25.43 4.81c.23.86.9 1.52 1.76 1.76C5.75 19 12 19 12 19s6.25 0 7.82-.43c.86-.23-1.52.9-1.76 1.76C22 15.25 22 12 22 12s0-3.25-.42-4.81zM9.75 15.5V8.5L15.75 12 9.75 15.5z"/></svg></a></div></div>
+            </div>
+            <div class="copyright"><p>© <span id="current-year"></span> <span class="brand-name-caps">BRAINOGYM</span> Educare. All Rights Reserved.</p></div>
+        </div>
+    </footer>
+
+    <!-- ================================================
+         ALL JAVASCRIPT IS EMBEDDED HERE
+         ================================================ -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // This is the global script for all pages.
+            
+            // 1. PRELOADER & PAGE LOAD TRANSITION
+            document.body.classList.remove("loading");
+            document.body.classList.add("loaded");
+
+            // 2. HEADER: STICKY & MOBILE MENU
+            const header = document.getElementById("main-header");
+            const menuToggle = document.getElementById("menu-toggle");
+            const mainNav = document.getElementById("main-nav");
+
+            if (header) {
+                const handleScroll = () => {
+                    header.classList.toggle("scrolled", window.scrollY > 50);
+                };
+                window.addEventListener("scroll", handleScroll, { passive: true });
+                handleScroll();
+            }
+
+            if (menuToggle && mainNav) {
+                menuToggle.addEventListener("click", () => {
+                    const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
+                    mainNav.classList.toggle("active");
+                    menuToggle.classList.toggle("active");
+                    menuToggle.setAttribute("aria-expanded", !isExpanded);
+                    document.body.classList.toggle("menu-open", mainNav.classList.contains("active"));
+                });
+            }
+            
+            // 3. UI ENHANCEMENTS: SCROLL ANIMATIONS & ACTIVE NAV
+            const animatedElements = document.querySelectorAll("[data-animation]");
+            if (animatedElements.length > 0) {
+                const animationObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const delay = parseInt(entry.target.dataset.delay) || 0;
+                            setTimeout(() => { entry.target.classList.add("is-visible"); }, delay);
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1 });
+                animatedElements.forEach(el => animationObserver.observe(el));
+            }
+            
+            const navLinks = document.querySelectorAll("#main-nav-links a");
+            if (navLinks.length > 0) {
+                const currentPage = window.location.pathname.split("/").pop();
+                navLinks.forEach(link => {
+                    const linkPage = link.getAttribute("href").split("/").pop();
+                    if (linkPage === 'courses.html') {
+                        link.classList.add("active-nav");
+                    } else if (linkPage === currentPage) {
+                        link.classList.add("active-nav");
+                    } else {
+                        link.classList.remove("active-nav");
+                    }
+                });
+            }
+
+            // 4. UTILITIES: FOOTER YEAR
+            const yearSpan = document.getElementById("current-year");
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+
+            // 5. PDF MODAL VIEWER (NEW)
+            const modal = document.getElementById('pdf-modal');
+            const overlay = document.getElementById('pdf-modal-overlay');
+            const iframe = document.getElementById('pdf-modal-iframe');
+            const modalTitle = document.getElementById('pdf-modal-title');
+            const openButtons = document.querySelectorAll('.open-pdf-modal');
+            const closeButton = document.getElementById('pdf-modal-close');
+
+            const openModal = (pdfSrc, pdfTitle) => {
+                if (!modal || !iframe) return;
+                iframe.setAttribute('src', pdfSrc);
+                modalTitle.textContent = pdfTitle;
+                modal.classList.add('show');
+                overlay.classList.add('show');
+                document.body.classList.add('modal-open');
+            };
+
+            const closeModal = () => {
+                if (!modal || !iframe) return;
+                modal.classList.remove('show');
+                overlay.classList.remove('show');
+                document.body.classList.remove('modal-open');
+                // Important: Clear the iframe src to stop the PDF from loading in the background
+                iframe.setAttribute('src', '');
+            };
+
+            openButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const pdfSrc = button.dataset.pdfSrc;
+                    const pdfTitle = button.dataset.pdfTitle;
+                    openModal(pdfSrc, pdfTitle);
+                });
+            });
+            
+            if(closeButton) closeButton.addEventListener('click', closeModal);
+            if(overlay) overlay.addEventListener('click', closeModal);
+            
+            // Close modal on escape key press
+            document.addEventListener('keydown', (e) => {
+                if (e.key === "Escape" && modal.classList.contains('show')) {
+                    closeModal();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
