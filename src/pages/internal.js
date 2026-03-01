@@ -1,8 +1,3 @@
-import "../styles/tokens.css";
-import "../styles/base.css";
-import "../styles/components.css";
-import "../styles/sections.css";
-import "../styles/pages.css";
 import { renderHeader } from "../components/header.js";
 import { renderFooter } from "../components/footer.js";
 import { initNavigation } from "../components/navigation.js";
