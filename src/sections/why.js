@@ -16,7 +16,7 @@ export function renderWhy() {
     <section class="section why">
       <div class="container">
         <div class="section-heading">
-          <p class="kicker">Why BrainoGym</p>
+          <p class="kicker">Why Brainogym</p>
           <h2>A Professional Learning System Parents Can Trust</h2>
         </div>
         <ul class="why-list">${items}</ul>

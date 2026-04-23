@@ -1,7 +1,7 @@
 {
   "name": "brainogym-main",
   "version": "1.0.0",
-  "description": "BrainoGym npm-based frontend foundation",
+  "description": "Brainogym npm-based frontend foundation",
   "private": true,
   "directories": {
     "doc": "docs"

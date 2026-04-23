@@ -1,6 +1,6 @@
 const faqItems = [
   {
-    q: "Which age groups can join BrainoGym programs?",
+    q: "Which age groups can join Brainogym programs?",
     a: "Programs are offered in age-appropriate batches so children learn at the right level and pace.",
   },
   {

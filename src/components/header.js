@@ -12,9 +12,9 @@ export function renderHeader({ active = "home", ctaHref = "/contact.html", ctaLa
     <header class="site-header">
       <div class="container header-wrap">
         <a href="#" class="brand">
-          <img src="/logos/brainogym-logo-primary.png" alt="BrainoGym logo" width="140" height="56" />
+          <img src="/logos/brainogym-logo-primary.png" alt="Brainogym logo" width="140" height="56" />
           <span class="brand-text">
-            <strong>BrainoGym</strong>
+            <strong>Brainogym</strong>
             <em>Educare</em>
           </span>
         </a>

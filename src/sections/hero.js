@@ -14,7 +14,7 @@ export function renderHero() {
         <p class="kicker">Since 2008 | Child Skill Development Experts</p>
         <h1>Build Faster Thinking, Stronger Confidence, and Better Academic Outcomes</h1>
         <p class="hero-sub">
-          BrainoGym programs in Abacus, Vedic Maths, Robotics, and Personality Development are designed for measurable growth.
+          Brainogym programs in Abacus, Vedic Maths, Robotics, and Personality Development are designed for measurable growth.
         </p>
         <div class="hero-actions">
           <a href="#contact" class="btn btn-solid">Book Free Demo Class</a>

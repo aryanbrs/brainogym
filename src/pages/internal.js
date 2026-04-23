@@ -14,7 +14,7 @@ function pageHero(title, subtitle) {
   return `
     <section class="page-hero">
       <div class="container">
-        <p class="kicker">BrainoGym Educare</p>
+        <p class="kicker">Brainogym Educare</p>
         <h1>${title}</h1>
         <p>${subtitle}</p>
       </div>
@@ -26,17 +26,17 @@ function aboutPage() {
   return `
     ${pageHero(
       "More Than Just Education, It's a Movement",
-      "Discover the passion, purpose, and people behind BrainoGym Educare."
+      "Discover the passion, purpose, and people behind Brainogym Educare."
     )}
     <section class="page-section">
       <div class="container split">
-        <img src="/images/Kavita-Founder.png" alt="Founder of BrainoGym" loading="lazy" decoding="async" />
+        <img src="/images/Kavita-Founder.png" alt="Founder of Brainogym" loading="lazy" decoding="async" />
         <div>
           <p class="kicker">Founder Story</p>
-          <h2>The Heart of BrainoGym</h2>
+          <h2>The Heart of Brainogym</h2>
           <p>
             What started as a parent-led mission in 2008 grew into a trusted learning ecosystem for children across Delhi NCR.
-            BrainoGym combines discipline, confidence building, and skill acceleration through structured mentoring.
+            Brainogym combines discipline, confidence building, and skill acceleration through structured mentoring.
           </p>
           <div class="chip-row">
             <span class="chip">18+ Years</span>
@@ -152,7 +152,7 @@ function galleryPage() {
 
 function contactPage() {
   return `
-    ${pageHero("Contact BrainoGym", "Book a demo class or speak with our counselor team.")}
+    ${pageHero("Contact Brainogym", "Book a demo class or speak with our counselor team.")}
     <section class="page-section">
       <div class="container contact-grid">
         <div class="contact-card">

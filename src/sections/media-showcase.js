@@ -22,7 +22,7 @@ function createGalleryCards(items) {
     .map(
       (img, idx) => `
       <figure class="media-card">
-        <img src="${img}" alt="BrainoGym gallery image ${idx + 1}" loading="lazy" decoding="async" />
+        <img src="${img}" alt="Brainogym gallery image ${idx + 1}" loading="lazy" decoding="async" />
       </figure>
     `
     )

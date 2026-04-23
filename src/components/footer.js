@@ -5,7 +5,7 @@ export function renderFooter() {
         <div>
           <img
             src="/logos/brainogym-logo-primary.png"
-            alt="BrainoGym logo"
+            alt="Brainogym logo"
             class="footer-logo"
             loading="lazy"
             decoding="async"
@@ -30,7 +30,7 @@ export function renderFooter() {
           <p><a href="contact.html">Contact</a></p>
         </div>
       </div>
-      <div class="copyright">(c) ${new Date().getFullYear()} BrainoGym Educare. All rights reserved.</div>
+      <div class="copyright">(c) ${new Date().getFullYear()} Brainogym Educare. All rights reserved.</div>
     </footer>
   `;
 }

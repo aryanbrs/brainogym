@@ -2,7 +2,7 @@ import { programs } from "../data/site.js";
 
 const faqItems = [
   {
-    question: "Which age groups can join BrainoGym programs?",
+    question: "Which age groups can join Brainogym programs?",
     answer: "Programs are offered in age-appropriate batches so children learn at the right level and pace.",
   },
   {
@@ -19,7 +19,7 @@ function buildSchema() {
   const orgSchema = {
     "@context": "https://schema.org",
     "@type": "EducationalOrganization",
-    name: "BrainoGym Educare",
+    name: "Brainogym Educare",
     url: "https://brainogym.com/",
     logo: "https://brainogym.com/logos/brainogym-logo-primary.png",
     image: "https://brainogym.com/images/banner/1.jpg",
@@ -44,7 +44,7 @@ function buildSchema() {
       description: program.outcome,
       provider: {
         "@type": "Organization",
-        name: "BrainoGym Educare",
+        name: "Brainogym Educare",
         sameAs: "https://brainogym.com/",
       },
     })),
